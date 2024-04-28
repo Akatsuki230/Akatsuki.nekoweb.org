@@ -3,23 +3,13 @@ import "@styles/global.module.css";
 import Header from "@components/header.astro";
 import Ads from "@components/ads.astro";
 import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Old Kekmet</title>
-    <style>
-      .warning {
-        background-color: #7d8002;
-        color: #fff;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #d6c802;
-      }
-    </style>
+    <Meta name="Old Kekmet Mod" description="Old Kekmet Mod for My Summer Car" tag="My Summer Car mods, Old Kekmet Mod, old engine sounds, old engine starting sounds, disable dashboard, disable forklift arm, change forklift color, old starting system, disable radio, changelog, Akatsuki, email: akatsuki2555@waifu.club" />
     <Ads />
   </head>
 
@@ -27,12 +17,6 @@ import Footer from "@components/footer.astro";
     <Header />
     <main>
       <h1>Old Kekmet Mod</h1>
-      <div class="warning">
-        <p>
-          This mod is deprecated and therefore is no longer updated. It is also
-          no longer available for download.
-        </p>
-      </div>
       <p>This mod modifies/adds the following things to the Kekmet:</p>
       <ul>
         <li>Old Engine Sounds (Default enabled)</li>
@@ -43,6 +27,10 @@ import Footer from "@components/footer.astro";
         <li>Old Starting System (Default enabled)</li>
         <li>Disable Radio</li>
       </ul>
+      <h2>Images</h2>
+      <img src="/project/oldkekmet/1.webp" alt="The Kekmet with all old features enabled, and the colour of the fork set to black.">
+      <img src="/project/oldkekmet/2.webp" alt="The Kekmet holding idle">
+      <img src="/project/oldkekmet/3.webp" alt="The Kekmet with dashboard disabled.">
       <h2>Changelog</h2>
       <h3>1.0 (20.02.2024)</h3>
       <ul>

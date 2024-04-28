@@ -9,54 +9,24 @@ import Meta from "@components/meta.astro";
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Meta
+      name="Socials"
+      description="List of Akatsuki's social accounts"
+      tag="my summer car,my summer car mods,socials,social"
+    />
+    <Ads />
+
     <style>
-      .social {
+      div {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: 2px solid #fff;
-        /* White border */
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        background-color: #333;
-        /* Dark background */
-        color: #fff;
-        /* White text */
-        transition: background-color 0.3s ease;
+        flex-wrap: wrap;
       }
 
-      .social:hover {
-        background-color: #555;
-        /* Darker background on hover */
-      }
-
-      .social h3 {
-        margin-bottom: 10px;
-      }
-
-      .social p {
-        color: #ccc;
-        /* Lighter text color */
-      }
-
-      .social a {
+      a {
         text-decoration: none;
-        color: #fff;
-        /* White link color */
-        font-weight: bold;
-        order: 2;
-        /* Move the link button to the right */
-      }
-
-      .social a:hover {
-        text-decoration: underline;
+        margin: 2px;
       }
     </style>
-    <Meta name="Socials" description="List of Akatsuki's social accounts" tag="my summer car,my summer car mods,socials,social" />
-    <Ads />
   </head>
 
   <body>
@@ -64,42 +34,50 @@ import Meta from "@components/meta.astro";
     <main>
       <h1>Akatsuki's socials</h1>
       <p>This is a list of Akatsuki's social accounts.</p>
-      <div class="social">
-        <a href="/discord">Link</a>
-        <h3>Discord server</h3>
-        <p>This is my Discord server. You're free to join.</p>
-      </div>
-      <div class="social">
-        <a href="https://youtube.com/@akatsuki2555">Link</a>
-        <h3>YouTube</h3>
-        <p>Here I post videos.</p>
-      </div>
-      <div class="social">
-        <a href="https://tiktok.com/@mldkyt">Link</a>
-        <h3>TikTok</h3>
-        <p>Here I also post videos.</p>
-      </div>
-      <div class="social">
-        <a href="https://twitch.tv/akatsuki2555">Link</a>
-        <h3>Twitch</h3>
-        <p>Here I sometimes livestream.</p>
-      </div>
-      <div class="social">
-        <a href="https://x.com/akatsuki2555">Link</a>
-        <h3>X</h3>
-        <p>I do not use this account much but it is mine.</p>
-      </div>
-      <div class="social">
-        <a href="https://reddit.com/u/Akatsuki230">Link</a>
-        <h3>Reddit</h3>
-        <p>I do not use this account much but it is mine.</p>
-      </div>
-      <div class="social">
-        <a href="https://instagram.com/akatsuki.230">Link</a>
-        <h3>Instagram</h3>
-        <p>I do not use this account much but it is mine.</p>
+      <div>
+        <a href="/discord">
+          <button>
+            <h3>Discord server</h3>
+          </button>
+        </a>
+        <a href="https://youtube.com/@akatsuki2555">
+          <button>
+            <h3>YouTube</h3>
+          </button>
+        </a>
+        <a href="https://tiktok.com/@mldkyt">
+          <button>
+            <h3>TikTok</h3>
+          </button>
+        </a>
+        <a href="https://twitch.tv/akatsuki2555">
+          <button>
+            <h3>Twitch</h3>
+          </button>
+        </a>
+        <a href="https://twitter.com/akatsuki2555">
+          <button>
+            <h3>Twitter</h3>
+          </button>
+        </a>
+        <a href="https://reddit.com/u/Akatsuki230">
+          <button>
+            <h3>Reddit</h3>
+          </button>
+        </a>
+        <a href="https://instagram.com/akatsuki.230">
+          <button>
+            <h3>Instagram</h3>
+          </button>
+        </a>
+        <a href="https://next.nexusmods.com/profile/Akatsuki2555/about-me">
+          <button>
+            <h3>NexusMods</h3>
+          </button>
+        </a>
       </div>
     </main>
+
     <Footer />
   </body>
 </html>
