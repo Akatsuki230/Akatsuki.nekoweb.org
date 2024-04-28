@@ -1,0 +1,76 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Astolfo Is Coming For You" description="Astolfo Is Coming For You" tag="Astolfo, project, safe variant, unsafe variant, countdown, kilometers, compliments, angry, shut down, machine" />
+    <style>
+      img {
+        max-width: calc(100% - 40px);
+      }
+
+      button {
+        background-color: #7289da;
+        color: #fff;
+        border: 0;
+        padding: 0.5em 1em;
+        border-radius: 10px;
+        margin: 0.5em;
+      }
+    </style>
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Astolfo is coming for you</h1>
+      <p>There are 2 variants of this project:</p>
+      <ol>
+        <li>
+          <p>The safe variant:</p>
+          <img
+            src="/project/astolfoiscomingforyou/safe_1.webp"
+            alt="Window of Astolfo coming for you, with a countdown of kilometers"
+          />
+          <br />
+          <img
+            src="/project/astolfoiscomingforyou/safe_2.webp"
+            alt="Astolfo gives you lots of compliments"
+          />
+          <br />
+          <a
+            href="https://github.com/Akatsuki230/AstolfoIsComingForYou/releases"
+          >
+            <button>Download the safe variant</button>
+          </a>
+        </li>
+        <li>
+          <p>The unsafe variant:</p>
+          <img
+            src="/project/astolfoiscomingforyou/evil_1.webp"
+            alt="Window of angry Astolfo coming for you, with a countdown of kilometers"
+          />
+          <br />
+          <img
+            src="/project/astolfoiscomingforyou/evil_2.webp"
+            alt="Astolfo shuts down your machine in anger"
+          />
+          <br />
+          <a
+            href="https://github.com/Akatsuki230/AstolfoIsComingForYou/releases"
+          >
+            <button>Download the unsafe variant</button>
+          </a>
+        </li>
+      </ol>
+    </main>
+    <Footer />
+  </body>
+</html>

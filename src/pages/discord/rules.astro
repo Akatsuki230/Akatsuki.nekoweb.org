@@ -1,0 +1,104 @@
+---
+import Footer from "@components/footer.astro";
+import "@styles/global.module.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Akatsuki's Discord Rules</title>
+    <style>
+      img {
+        max-width: calc(100% - 5px);
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Akatsuki's Discord Server Rules</h1>
+      <h2>Join Requirements</h2>
+      <p>This server requires the following for you to be able to join.</p>
+      <ul>
+        <li id="old31">Your account has to be older than 31 days.</li>
+        <li id="avatar">You need to have an avatar.</li>
+      </ul>
+      <p>
+        I have these strict rules to prevent bots from raiding the Discord
+        server.
+      </p>
+      <h2>Server Rules</h2>
+      <p>
+        Non-compliance may lead to warnings, mutes, or bans. Some rules apply to
+        all servers with Akatsuki. Certain rules also apply to DMs. Report
+        inappropriate behavior or content leaks to an admin.
+      </p>
+      <p>
+        Rules that are marked <strong>bold</strong> are more strictly handled than
+        normal rules.
+      </p>
+      <ol>
+        <li id="deadnaming">No deadnaming. Applies to pronouns and names</li>
+        <li id="racism"><strong>No racism/hate speech.</strong></li>
+        <li id="homophobia"><strong>No homophobia/transphobia.</strong></li>
+        <li id="oldmsc">No old My Summer Car builds/asking for them</li>
+        <li id="wordfilter">No word filter bypass.</li>
+        <li id="noalts">No alts</li>
+        <li id="mod">Respect moderator decisions</li>
+        <li id="dox">
+          No doxxing (sharing personal information of someone else without their
+          consent)
+        </li>
+        <li id="light">Keep the chat lighthearted</li>
+      </ol>
+    </main>
+    <Footer />
+    <script type="text/javascript">
+      function highlightRules() {
+        switch (location.hash) {
+          case "#deadnaming":
+            document.getElementById("deadnaming").style.backgroundColor =
+              "#5d6185";
+            break;
+          case "#racism":
+          case "#hatespeech":
+            document.getElementById("racism").style.backgroundColor = "#5d6185";
+            break;
+          case "#homophobia":
+          case "#transphobia":
+            document.getElementById("homophobia").style.backgroundColor =
+              "#5d6185";
+            break;
+          case "#oldmsc":
+            document.getElementById("oldmsc").style.backgroundColor = "#5d6185";
+            break;
+          case "#wordfilter":
+            document.getElementById("wordfilter").style.backgroundColor =
+              "#5d6185";
+            break;
+          case "#noalts":
+            document.getElementById("noalts").style.backgroundColor = "#5d6185";
+            break;
+          case "#dox":
+            document.getElementById("dox").style.backgroundColor = "#5d6185";
+            break;
+          case "#mod":
+            document.getElementById("mod").style.backgroundColor = "#5d6185";
+            break;
+          case "#light":
+            document.getElementById("light").style.backgroundColor = "#5d6185";
+            break;
+          case "#avatar":
+            document.getElementById("avatar").style.backgroundColor = "#5d6185";
+            break;
+          case "#old31":
+            document.getElementById("old31").style.backgroundColor = "#5d6185";
+            break;
+        }
+      }
+
+      highlightRules();
+    </script>
+  </body>
+</html>

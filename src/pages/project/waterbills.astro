@@ -1,0 +1,46 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Water Bills | My Summer Car | Akatsuki</title>
+        <style>
+            img {
+                max-width: calc(100% - 5px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <Header />
+        <main>
+            <h1>Water Bills</h1>
+            <p>
+                This mod adds water bills alongside electricity bills and phone
+                bills.
+            </p>
+            <img src="/project/waterbills/header.webp" alt="header" />
+            <p>
+                Features of this mod include:
+
+                <ul>
+                    <li>Water Bills</li>
+                    <li>
+                        Adjustable price per liter (can't adjust after game
+                        start to avoid cheating the system :3)
+                    </li>
+                    <li>Adjustable water combustion for bathroom shower</li>
+                    <li>
+                        Adjustable water combustion for tap in kitchen and
+                        bathroom
+                    </li>
+                </ul>
+            </p>
+        </main>
+        <Footer />
+    </body>
+</html>

@@ -1,0 +1,69 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Highway Car Breakdowns</title>
+    <style>
+      img {
+        max-width: calc(100% - 5px);
+        margin: 10px 0;
+      }
+    </style>
+    <Ads />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Highway Car Breakdowns</h1>
+      <p>
+        This mod adds randomly breaking down cars on the highway. The car spawn
+        rate is very rare though.
+      </p>
+      <p>How to fix a car if you spot one on the highway:</p>
+      <ol>
+        <li>Locate a car broken down next to the road (very rare)</li>
+        <li>The guy next to it will say hello</li>
+        <li>Inspect the car damage by pointing at the car and holding F</li>
+        <li>The problem will be inspected and found out</li>
+        <li>You can head to get the resources or fix it on spot</li>
+        <li>You will get a random payment afterward</li>
+      </ol>
+      <br />
+      <a href="https://www.nexusmods.com/mysummercar/mods/5209">
+        <button>Download this mod</button>
+      </a>
+      <a href="/project/highwaycarbreakdowns/changelog">
+        <button>View the changelog</button>
+      </a>
+      <h2>Images</h2>
+      <img
+        src="/project/highwaycarbreakdowns/1.webp"
+        alt="The car next to the road"
+      />
+      <img
+        src="/project/highwaycarbreakdowns/2.webp"
+        alt="The car next to the road, other side"
+      />
+      <img
+        src="/project/highwaycarbreakdowns/3.webp"
+        alt="Indicator of inspection"
+      />
+      <img
+        src="/project/highwaycarbreakdowns/4.webp"
+        alt="Inspection process"
+      />
+      <img
+        src="/project/highwaycarbreakdowns/5.webp"
+        alt="The guy thanking you for the repair"
+      />
+    </main>
+    <Footer />
+  </body>
+</html>

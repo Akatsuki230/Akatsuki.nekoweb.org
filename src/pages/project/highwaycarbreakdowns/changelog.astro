@@ -1,0 +1,64 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Highway Car Breakdowns</title>
+        <style>
+            img {
+                max-width: calc(100% - 5px);
+                margin: 10px 0;
+            }
+        </style>
+        <Ads />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <h1>Highway Car Breakdowns - Changelog</h1>
+            <p>
+                <a href="/project/highwaycarbreakdowns"
+                    ><button>Go back to mod</button>
+                </a>
+            </p>
+
+            <h2>Version 1.2.0</h2>
+            <ul>
+                <li>Added oil filter breakdown reason</li>
+                <li>
+                    Added a UI showing what items you need to get for repair
+                </li>
+                <li>The UI can be toggled inside the mod settings</li>
+                <li>The inspection time is now random</li>
+                <li>
+                    Made mod open-sourced, as updates are not planned for now
+                </li>
+            </ul>
+            <h2>Version 1.1.0</h2>
+            <ul>
+                <li>2 new breakdown reasons</li>
+                <li>Fixes for NPC straightness (I made him gay /jk)</li>
+                <li>Better payment receiving system</li>
+                <li>Spawn multiplier</li>
+                <li>Added a better way of giving items to the NPC</li>
+            </ul>
+            <h2>Version 1.0.1</h2>
+            <ul>
+                <li>
+                    Fix a critical bug where you couldn't interact with the NPC
+                </li>
+            </ul>
+            <h2>Version 1.0</h2>
+            <ul>
+                <li>Initial release</li>
+            </ul>
+        </main>
+        <Footer />
+    </body>
+</html>

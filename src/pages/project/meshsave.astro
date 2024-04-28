@@ -1,0 +1,39 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akatsuki's meshsave download</title>
+    <style>
+      img {
+        width: calc(100vw - 60px);
+      }
+    </style>
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akatsuki's meshsave download</h1>
+      <p>
+        Here you can download the abomination of a meshsave that Akatsuki has.
+      </p>
+      <img src="/project/meshsave/1.webp" alt="Meshsave preview 1" />
+      <img src="/project/meshsave/2.webp" alt="Meshsave preview 2" />
+      <img src="/project/meshsave/3.webp" alt="Meshsave preview 3" />
+      <img src="/project/meshsave/4.webp" alt="Meshsave preview 4" />
+      <a href="/project/meshsave/meshsave.txt" download>
+        <button>Download NOW!</button>
+      </a>
+    </main>
+    <Footer />
+  </body>
+</html>

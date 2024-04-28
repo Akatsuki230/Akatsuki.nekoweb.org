@@ -1,0 +1,54 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="AstolfOS" description="AstolfOS transfers your Linux into AstolfOS!" tag="AstolfOS, Linux, script, KDE splash screen, GRUB configuration, neofetch configuration, terminal style, manual installation, os-release file, kcm-about-distrorc file, Neofetch configuration, issue file, lsb-release file, customization" />
+    <style>
+      img {
+        max-width: calc(100% - 5px);
+        margin: 10px 0;
+      }
+    </style>
+    <Ads />  
+  </head>
+
+
+  <body>
+    <Header />
+    <main>
+      <h1>AstolfOS</h1>
+      <p>AstolfOS transfers your Linux into AstolfOS!</p>
+      <p>
+        This script changes the OS name, KDE splash screen, GRUB configuration,
+        neofetch configuration, and terminal style.
+      </p>
+      <img
+        src="/project/astolfos/desktop.webp"
+        alt="Desktop view of AstolfOS"
+      />
+      <img
+        src="/project/astolfos/settings.webp"
+        alt="Settings view of AstolfOS"
+      />
+      <img
+        src="/project/astolfos/neofetch.webp"
+        alt="Neofetch view of AstolfOS"
+      />
+      <p>
+        <a
+          href="https://github.com/Akatsuki230/AstolfOS/wiki/Manual-Installation"
+        >
+          <button>Installation Guide</button>
+        </a>
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>

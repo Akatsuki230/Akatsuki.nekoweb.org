@@ -1,0 +1,40 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Old Hayosiko</title>
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Old Hayosiko</h1>
+      <p>
+        Old Hayosiko is a mod for My Summer Car that recreates the old hayosiko
+        from older versions of the game.
+      </p>
+      <h2>Features:</h2>
+      <ul>
+        <li>Old Steering Wheel</li>
+        <li>White Interior</li>
+        <li>Remove Dashboard</li>
+        <li>Engine sound swap</li>
+      </ul>
+
+      <h2>Download</h2>
+      <a href="https://www.nexusmods.com/mysummercar/mods/4653">
+        <button>Download</button>
+      </a>
+    </main>
+    <Footer />
+  </body>
+</html>

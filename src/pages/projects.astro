@@ -1,0 +1,96 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import projectStyles from "@styles/projectList.module.css";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Meta name="Project List" description="List of Akatsuki's projects" tag="astolfo is coming for you,astolfo forge mod,my summer car" />
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akatsuki's projects</h1>
+      <p>This is a list of Akatsuki's projects.</p>
+      <div class={projectStyles.error}>
+        <p>Looking for My Summer Car mods? They have moved.</p>
+        <a href="/mscmods/">
+          <button>Go to My Summer Car mods</button>
+        </a>
+      </div>
+      <a href="/project/meshsave">
+        <div
+          class={projectStyles.project}
+          style="background-image: url(/project/meshsave/1.webp);"
+        >
+          <h3>My Summer Car Meshsave</h3>
+          <p>This is the abomination of a meshsave made by Akatsuki.</p>
+        </div>
+      </a>
+      <a href="/project/astolfoiscomingforyou">
+        <div
+          class={projectStyles.project}
+          style="background-image: url(/project/astolfoiscomingforyou/safe_1.webp);"
+        >
+          <h3>Astolfo is coming for you</h3>
+          <p>A program where Astolfo comes for you.</p>
+        </div>
+      </a>
+      <a href="/project/astolfos">
+        <div
+          class={projectStyles.project}
+          style="background-image: url(/project/astolfos/neofetch.webp);"
+        >
+          <h3>AstolfOS</h3>
+          <p>An operating system with Astolfo in a lot of places.</p>
+        </div>
+      </a>
+      <a href="/project/astolfoforge">
+        <div
+          class={projectStyles.project}
+          style="background-image: url(/project/astolfoforge/biome.webp);"
+        >
+          <h3>Astolfo Forge</h3>
+          <p>A mod for Minecraft that adds Astolfo to the game.</p>
+        </div>
+      </a>
+      <a href="/project/astolforesourcepack">
+        <div
+          class={projectStyles.project}
+          style="background-image: url(/project/astolforesourcepack/menu.webp);"
+        >
+          <h3>Astolfo Resource Pack</h3>
+          <p>A resource pack that adds Astolfo into many places in Minecraft</p>
+        </div>
+      </a>
+      <a href="/project/akabot">
+        <div
+          class={projectStyles.project}
+          style="background-image: url(/project/akabot/Discord_70tNHM1QLB.png);"
+        >
+          <h3>Akabot</h3>
+          <p>This is a Discord bot made by Akatsuki.</p>
+        </div>
+      </a>
+      <a href="/project/catgirlnonsense">
+        <div
+          class={projectStyles.project}
+          style="background-image: url(/project/catgirlnonsense/chrome_oBHNCyfNts.png);"
+        >
+          <h3>Catgirl Nonsense</h3>
+          <p>A catgirl nonsense generator.</p>
+        </div>
+      </a>
+    </main>
+    <Footer />
+  </body>
+</html>

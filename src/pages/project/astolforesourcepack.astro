@@ -1,0 +1,69 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Astolfo Resource Pack" description="Astolfo Resource Pack for Minecraft" tag="Astolfo Resource Pack, Minecraft, edition, loading screen, logo, totem of undying, ending screen, Astolfo themed, takedown, Zenbooda, Akatsuki, visible, confusion, TikTok" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <style>
+      .error {
+        background-color: #ff0000;
+        color: #ffffff;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .warning {
+        background-color: #ffcc00;
+        color: #000000;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      img {
+        max-width: calc(100% - 5px);
+        margin: 10px 0;
+      }
+    </style>
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Astolfo Resource Pack</h1>
+      <h2>Minecraft :3 edition let's gooo</h2>
+      <p>
+        This resource pack changes the Minecraft loading screen, logo, totem of
+        undying and ending screen to be more Astolfo themed.
+      </p>
+
+      <img src="/project/astolforesourcepack/loading.webp" alt="Loading" />
+      <img src="/project/astolforesourcepack/menu.webp" alt="Menu" />
+      <img src="/project/astolforesourcepack/ending.webp" alt="Ending" />
+
+      <div class="error">
+        <h2>Takedown</h2>
+        <p>
+          This item was taken down on 2023/08/02 at 00:02 UTC because of the
+          following reason: This item was connected to Zenbooda. Talking about
+          this item around Akatsuki is not a good idea as they'll block you.
+        </p>
+      </div>
+
+      <div class="warning">
+        <p>
+          This item was set back to visible on 2024/02/02 because of many
+          confused people on my TikTok being unable to find the project.
+        </p>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
