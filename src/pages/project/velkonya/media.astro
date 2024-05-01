@@ -1,0 +1,40 @@
+---
+import "@styles/global.module.css";
+import Footer from "@components/footer.astro";
+import Header from "@components/header.astro";
+import Meta from "@components/meta.astro";
+import Tabs from "@components/Tabs.astro";
+import Tab from "@components/Tab.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <Meta
+            name="Velkonya | Minecraft"
+            description="Velkonya: An Expanding City Project in VelkySMP is a thriving virtual metropolis built by the talented Akatsuki. With its continuous growth, Velkonya currently boasts 26 unique houses, a comfortable apartment complex, an informative visits board, and a vibrant Japanese board, highlighting the diverse cultural influences within the VelkySMP server."
+        />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <h1>Media of Velkonya</h1>
+            <Tabs>
+                <Tab href="/project/velkonya" >Main</Tab>
+                <Tab href="/project/velkonya/media" selected>Media</Tab>
+            </Tabs>
+
+            <img src="/project/velkonya/0.webp" alt="">
+            <img src="/project/velkonya/1.webp" alt="">
+            <img src="/project/velkonya/2.webp" alt="">
+            <img src="/project/velkonya/3.webp" alt="">
+            <img src="/project/velkonya/4.webp" alt="">
+            <img src="/project/velkonya/5.webp" alt="">
+            <img src="/project/velkonya/6.webp" alt="">
+            <img src="/project/velkonya/7.webp" alt="">
+            <img src="/project/velkonya/8.webp" alt="">
+            <img src="/project/velkonya/9.webp" alt="">
+        </main>
+        <Footer />
+    </body>
+</html>

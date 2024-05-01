@@ -1,0 +1,18 @@
+.tabs {
+    display: flex;
+    background-color: #252525;
+}
+
+.tab {
+    padding: 2px 8px;
+    border: 2px solid #252525;
+    border-bottom: 1px solid #252525;
+    color: inherit;
+    text-decoration: none;
+}
+
+.selectedTab {
+    background-image: linear-gradient(to bottom, #414141, #292929);
+    border: 2px solid black;
+    border-bottom: 1px solid black;
+}
