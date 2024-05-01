@@ -8,7 +8,32 @@ import blogListStyles from '@styles/blogList.module.css';
 
 let posts = (await Astro.glob("./**/*.astro")) as (AstroInstance & { name: string, description: string, date: string })[];
 
-posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).reverse();
+posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+function stringCutoff(string: string, letterLimit: number) {
+    const words = string.split(' ');
+    let currentLength = 0;
+    let lastValidWord = 0;
+
+    for (let i = 0; i < words.length; i++) {
+        const wordLength = words[i].length;
+        if (currentLength + wordLength + 1 > letterLimit) {
+            break;
+        }
+
+        currentLength += wordLength + 1;
+        lastValidWord = i + 1;
+    }
+
+    const result = words.slice(0, lastValidWord).join(' ');
+
+    if (string.length > letterLimit) {
+        return result.trim() + '...';
+    } else {
+        return result;
+    }
+}
+
 ---
 
 <!DOCTYPE html>
@@ -23,8 +48,8 @@ posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).re
     {posts.map((x: AstroInstance & { name?: string, description?: string, date?: string }) => {
         if (!x.name || !x.description || !x.date) return null;
         return <div class={blogListStyles.blog}>
-            <h2>{x.name}</h2>
-            <p>{x.description}</p>
+            <h2>{stringCutoff(x.name, 40)}</h2>
+            <p>{stringCutoff(x.description, 70)}</p>
             <p>Created {x.date}</p>
             <a href={x.url}>Read more</a>
         </div>
