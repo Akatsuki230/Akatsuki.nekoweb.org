@@ -1,0 +1,35 @@
+---
+import Meta from "@components/meta.astro";
+import type { AstroInstance } from "node_modules/astro/dist/@types/astro";
+import '@styles/global.module.css';
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
+import blogListStyles from '@styles/blogList.module.css';
+
+let posts = (await Astro.glob("./**/*.astro")) as (AstroInstance & { name: string, description: string, date: string })[];
+
+posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).reverse();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <Meta name="Blog posts" description="Blog posts on Akatsuki's website" />
+</head>
+<body>
+    <Header />
+    <main>
+        <h1>Welcome to my blog posts!</h1>
+    {posts.map((x: AstroInstance & { name?: string, description?: string, date?: string }) => {
+        if (!x.name || !x.description || !x.date) return null;
+        return <div class={blogListStyles.blog}>
+            <h2>{x.name}</h2>
+            <p>{x.description}</p>
+            <p>Created {x.date}</p>
+            <a href={x.url}>Read more</a>
+        </div>
+    })}
+    </main>
+    <Footer />
+</body>
+</html>
