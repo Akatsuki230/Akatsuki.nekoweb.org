@@ -1,5 +1,5 @@
-$Name = Read-Host -Prompt "Name: "
-$Description = Read-Host -Prompt "Description: "
+$Name = Read-Host -Prompt "Name"
+$Description = Read-Host -Prompt "Description"
 
 # Input validation for year
 do {
