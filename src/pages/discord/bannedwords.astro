@@ -1,0 +1,67 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <style>
+            #discordrules {
+                display: none;
+                position: fixed;
+                top: 100px;
+                left: 100px;
+                width: calc(100% - 200px);
+                height: 800px;
+            }
+
+            iframe {
+                width: 100%;
+            }
+        </style>
+        <Ads />
+    </head>
+    <body>
+        <main>
+            <h1>Banned words on Akatsuki's Discord server</h1>
+            <p>
+                <a href="/discord/rules">
+                    <button>Return back to reading rules</button>
+                </a>
+            </p>
+            <h2>Lightly treated words</h2>
+            <p>
+                Words that are treated lightly mean that they will just result
+                in a ban and further investigation by admins.
+            </p>
+            <p>The list of these words is:</p>
+            <p>
+                9 11, 9/11, homophob*, iron cross, ironcross, ligma, nazism,
+                nine eleven, onlyfans, say gex, sugandese, trans boys are not
+                boys, trans boys aren't boys, trans girls are not girls, trans
+                girls aren't girls, trans men are not men, trans men aren't men,
+                trans women are not women, trans women aren't women, transphob*,
+                world war 2, world war ii, ww2, wwii, you will never be a girl,
+                you will never be a woman, you will never be a real girl, you
+                will never be a real woman, you can give birth, mental disorder,
+                mental breakdown, mental damage, dick
+            </p>
+            <h2>Heavily treated words</h2>
+            <p>
+                Words in these list are treated very seriously and will result
+                in a permanent ban with no warning as soon as you say one of
+                these.
+            </p>
+            <p>
+                fag, faggot, fascism, fascist, naci, nacism, nazi, nazism,
+                nigga, nigger, trannie, tranny
+            </p>
+        </main>
+
+        <Footer />
+    </body>
+</html>
