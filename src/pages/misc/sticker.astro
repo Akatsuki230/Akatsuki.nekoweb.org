@@ -1,0 +1,30 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Le Satsuma Sticker"
+      description="This is Akatsuki's Satsuma sticker, it's a bunch of Astolfo stickers sticked on the rear of the car. You can download it from the official website here."
+    />
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Le Satsuma Sticker</h1>
+      <p>This is my Satsuma sticker, it's a bunch of Astolfo stickers sticked on the rear of the car.</p>
+      <a href="/misc/sticker/sticker.zip"><button>Download NOW!</button></a>
+      <h2>Le Images</h2>
+      <img src="/misc/sticker/1.webp" alt="Sticker">
+    </main>
+    <Footer />
+  </body>
+</html>

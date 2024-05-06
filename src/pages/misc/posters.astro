@@ -1,0 +1,32 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Le Posters"
+      description=""
+    />
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Le Posters</h1>
+      <p>These are my posters for My Summer Car. It features a lot of memes from subreddits such as r/egg_irl and r/traaaaaaannnnnnnnnns. You can download it here.</p>
+      <a href="/misc/posters/posters.zip"><button>Download NOW!</button></a>
+      <h2>Le Images</h2>
+      <img src="/misc/posters/1.webp" alt="Poster number 1">
+      <img src="/misc/posters/2.webp" alt="Poster number 2">
+      <img src="/misc/posters/3.webp" alt="Poster number 3">
+    </main>
+    <Footer />
+  </body>
+</html>

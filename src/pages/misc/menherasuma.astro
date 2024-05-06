@@ -1,0 +1,31 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import projectStyles from "@styles/projectList.module.css";
+import Ads from "@components/ads.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Le Menherasuma"
+      description="The Menherasuma is a My Summer Car skin featuring MenheraChan and a transgender flag as the entire car skin. You can download it completely for free from the offical website here."
+    />
+    <Ads />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Le Menherasuma</h1>
+      <p>The Menherasuma is a My Summer Car skin featuring MenheraChan and a transgender flag as the entire car skin. You can download it completely for free from here.</p>
+      <a href="/misc/menherasuma/menherasuma.zip"><button>Download NOW!</button></a>
+      <h2>Le Images</h2>
+      <img src="/misc/menherasuma/1.webp" alt="Menherasuma">
+    </main>
+    <Footer />
+  </body>
+</html>
