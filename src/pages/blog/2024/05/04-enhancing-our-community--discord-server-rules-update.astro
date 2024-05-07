@@ -8,6 +8,7 @@ export const date = "2024-05-04";
 import Header from "@components/header.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -18,7 +19,8 @@ import Meta from "@components/meta.astro";
             description="Updated Discord Server Rules: Learn about recent changes to our Discord community guidelines, including revised humor guidelines and NSFW/Lewd content policies. Help us maintain a fun, safe, and inclusive environment for all members."
             tag="rules update, Discord server, community guidelines, humor guidelines, NSFW content, lewd content, safe environment, inclusive community"
         />
-    </head>
+    <Cursor client:load />
+</head>
     <body>
         <Header />
         <main>

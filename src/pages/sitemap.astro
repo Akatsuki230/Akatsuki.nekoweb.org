@@ -1,17 +1,20 @@
 ---
+import Cursor from "@components/cursor.astro";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
 import Meta from "@components/meta.astro";
 
 let allPages = await Astro.glob("../pages/**/*.astro");
-allPages = allPages.filter(page => page.url !== "");
-
+allPages = allPages.filter((page) => page.url !== "");
 ---
-
 
 <html>
     <head>
-        <Meta name="Sitemap" description="Explore the entirety of the website with the sitemap! You can see a full list of all pages here :3" />
+        <Meta
+            name="Sitemap"
+            description="Explore the entirety of the website with the sitemap! You can see a full list of all pages here :3"
+        />
+        <Cursor client:load />
     </head>
 
     <body>
@@ -20,9 +23,15 @@ allPages = allPages.filter(page => page.url !== "");
             <h1>Sitemap</h1>
             <ul>
                 <li><a href="/">/</a></li>
-                {allPages.map((page) => {
-                    return <li><a href={page.url}>{page.url}</a></li>
-                })}
+                {
+                    allPages.map((page) => {
+                        return (
+                            <li>
+                                <a href={page.url}>{page.url}</a>
+                            </li>
+                        );
+                    })
+                }
             </ul>
         </main>
         <Footer />

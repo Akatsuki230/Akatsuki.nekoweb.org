@@ -1,0 +1,21 @@
+---
+
+---
+
+<script>
+    import { fairyDustCursor, rainbowCursor } from 'cursor-effects';
+    window.addEventListener("load", (event) => {
+        if (localStorage.getItem("cursorSetting") == "disable") {
+            return;
+        }
+
+        fairyDustCursor({
+            colors: ["#5BCEFA", "#F5A9B8", "#FFFFFF"],
+        });
+        rainbowCursor({
+            colors: ["lightblue", "pink", "white", "pink", "lightblue"],
+            length: 50,
+            size: 5
+        });
+    });
+</script>

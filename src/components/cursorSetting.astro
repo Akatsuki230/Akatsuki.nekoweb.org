@@ -1,0 +1,26 @@
+---
+
+---
+
+<script>
+    let enableCursor = document.getElementById("enablecursor") as HTMLInputElement;
+    enableCursor.checked = localStorage.getItem("cursorSetting") != "disable";
+    enableCursor.onchange = function toggleCursor() {
+        if (enableCursor.checked) {
+            if (localStorage.getItem("cursorSetting") != null) {
+                localStorage.removeItem("cursorSetting");
+            }
+        }
+        else {
+            localStorage.setItem("cursorSetting", "disable");
+        }
+
+        location.reload();
+    }
+</script>
+
+<p>
+    <input type="checkbox" name="enablecursor" id="enablecursor">
+    <label for="enablecursor">Enable Transgender Cursor</label>
+</p>
+

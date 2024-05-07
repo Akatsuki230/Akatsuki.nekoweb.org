@@ -8,6 +8,7 @@ export const date = "2024-05-01";
 import Header from "@components/header.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -18,7 +19,8 @@ import Meta from "@components/meta.astro";
             description="Enhance your My Summer Car experience with the Reg Plate Changer mod, allowing you to customize registration plates on every vehicle. Download now and showcase your unique designs on the roads of Finland!"
             tag="My Summer Car, Reg Plate Changer mod, customization, modding community, personalization, vehicle registration plates, gaming, Finland, collaboration, Tukkisuma, Akatsuki, creativity, unique designs"
         />
-    </head>
+    <Cursor client:load />
+</head>
     <body>
         <Header />
         <main>

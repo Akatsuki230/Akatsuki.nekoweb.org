@@ -4,6 +4,7 @@ import Header from "@components/header.astro";
 import Ads from "@components/ads.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -11,6 +12,7 @@ import Meta from "@components/meta.astro";
   <head>
     <Meta name="AstolfOS" description="AstolfOS transfers your Linux into AstolfOS!" tag="AstolfOS, Linux, script, KDE splash screen, GRUB configuration, neofetch configuration, terminal style, manual installation, os-release file, kcm-about-distrorc file, Neofetch configuration, issue file, lsb-release file, customization" />
     <Ads />  
+    <Cursor client:load />
   </head>
 
 

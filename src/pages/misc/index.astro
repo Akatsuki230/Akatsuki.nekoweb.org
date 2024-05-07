@@ -5,6 +5,7 @@ import projectStyles from "@styles/projectList.module.css";
 import Ads from "@components/ads.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -12,7 +13,8 @@ import Meta from "@components/meta.astro";
     <head>
         <Meta name="" description="" />
         <Ads />
-    </head>
+    <Cursor client:load />
+</head>
 
     <body>
         <Header />

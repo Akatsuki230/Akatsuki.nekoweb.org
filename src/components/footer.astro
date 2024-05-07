@@ -1,4 +1,6 @@
 ---
+import CursorSetting from "./cursorSetting.astro";
+
 const currentYear = new Date().getFullYear();
 
 const allPages = await Astro.glob("../pages/**/*.astro");
@@ -16,4 +18,5 @@ const builtString = `Last updated ${builtDate.getUTCFullYear()}/${month}/${day} 
     <p>You can e-mail her at <a href="mailto:akatsuki2555@waifu.club">akatsuki2555@waifu.club</a></p>
     <p><a href="/sitemap">This website has {allPages.length} pages! Click on this link for sitemap :3</a></p>
     <p>{builtString}</p>
+    <CursorSetting client:load />
 </footer>

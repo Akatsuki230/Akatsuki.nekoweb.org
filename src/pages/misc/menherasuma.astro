@@ -5,6 +5,7 @@ import projectStyles from "@styles/projectList.module.css";
 import Ads from "@components/ads.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -15,6 +16,7 @@ import Meta from "@components/meta.astro";
       description="The Menherasuma is a My Summer Car skin featuring MenheraChan and a transgender flag as the entire car skin. You can download it completely for free from the offical website here."
     />
     <Ads />
+    <Cursor client:load />
   </head>
 
   <body>

@@ -1158,6 +1158,11 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
+cursor-effects@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/cursor-effects/-/cursor-effects-1.0.15.tgz#78aa0cb5e6bd46eddb944c447ac014c045c5eb38"
+  integrity sha512-sx+xMgyVAxt1VJKU2nQ2TCZ5AxWN/dQ11plm9RYpnijazXPPDFlreX2blRS1rkw71sTA1nI9NjxqWzLTLh+ujw==
+
 debug@^4.0.0, debug@^4.1.0, debug@^4.3.1, debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"

@@ -4,6 +4,7 @@ import Header from "@components/header.astro";
 import Ads from "@components/ads.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -11,6 +12,7 @@ import Meta from "@components/meta.astro";
   <head>
     <Meta name="Asphalt Roads" description="Asphalt Roads Mod for My Summer Car" tag="my summer car, mod, asphalt roads, texture, grip, balance, settings, dirt race track, grandma's house, landfill, pathways, houses" />
     <Ads />
+    <Cursor client:load />
   </head>
 
   <body>

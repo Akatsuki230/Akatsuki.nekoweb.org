@@ -4,6 +4,7 @@ import Header from "@components/header.astro";
 import Ads from "@components/ads.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -24,7 +25,8 @@ import Meta from "@components/meta.astro";
             }
         </style>
         <Ads />
-    </head>
+    <Cursor client:load />
+</head>
     <body>
         <main>
             <h1>Banned words on Akatsuki's Discord server</h1>
