@@ -6,6 +6,7 @@ import Header from "@components/header.astro";
 import Footer from "@components/footer.astro";
 import blogListStyles from '@styles/blogList.module.css';
 import Cursor from "@components/cursor.astro";
+import Scripts from "@components/scripts.astro";
 
 let posts = (await Astro.glob("./**/*.astro")) as (AstroInstance & { name: string, description: string, date: string })[];
 
@@ -41,6 +42,7 @@ function stringCutoff(string: string, letterLimit: number) {
 <html lang="en">
 <head>
     <Meta name="Blog posts" description="Blog posts on Akatsuki's website" />
+    <Scripts />
     <Cursor />
 </head>
 <body>

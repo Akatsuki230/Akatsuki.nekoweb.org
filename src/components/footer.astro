@@ -1,5 +1,6 @@
 ---
 import CursorSetting from "./cursorSetting.astro";
+import webdata from 'webdata.json';
 
 const currentYear = new Date().getFullYear();
 
@@ -9,7 +10,10 @@ const allPages = await Astro.glob("../pages/**/*.astro");
 const builtDate = new Date();
 const month = builtDate.getUTCMonth().toString().length == 1 ? "0" + (builtDate.getUTCMonth() + 1) : builtDate.getUTCMonth() + 1;
 const day = builtDate.getUTCDate().toString().length == 1 ? "0" + builtDate.getUTCDate() : builtDate.getUTCDate();
-const builtString = `Last updated ${builtDate.getUTCFullYear()}/${month}/${day} ${builtDate.getUTCHours()}:${builtDate.getUTCMinutes()}:${builtDate.getUTCSeconds()}`;
+
+
+const builtString = `Last updated ${builtDate.getUTCFullYear()}/${month}/${day} ${builtDate.getUTCHours()}:${builtDate.getUTCMinutes()}:${builtDate.getUTCSeconds()} and at this time this site had ${webdata["views"]} visits!`;
+
 ---
 
 
@@ -18,5 +22,12 @@ const builtString = `Last updated ${builtDate.getUTCFullYear()}/${month}/${day} 
     <p>You can e-mail her at <a href="mailto:akatsuki2555@waifu.club">akatsuki2555@waifu.club</a></p>
     <p><a href="/sitemap">This website has {allPages.length} pages! Click on this link for sitemap :3</a></p>
     <p>{builtString}</p>
+    <p id="footer-page-visits">Loading current information...</p>
     <CursorSetting />
+
+    <script is:inline>
+        $.get("https://nekoweb.org/api/site/info/akatsuki", function (data) {
+            $("#footer-page-visits").text("The website currently has " + data["views"] + " visits");
+        })
+    </script>
 </footer>
