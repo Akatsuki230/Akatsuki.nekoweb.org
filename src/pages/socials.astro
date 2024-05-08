@@ -4,7 +4,7 @@ import Header from "@components/header.astro";
 import Scripts from "@components/scripts.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
-import projectStyles from "@styles/projectList.module.css";
+import socialStyles from "@styles/socialList.module.css";
 import Cursor from "@components/cursor.astro";
 ---
 
@@ -37,47 +37,26 @@ import Cursor from "@components/cursor.astro";
     <main>
       <h1>Akatsuki's socials</h1>
       <p>This is a list of Akatsuki's social accounts.</p>
-      <div>
-        <a href="/discord">
-          <button>
-            <h3>Discord server</h3>
-          </button>
-        </a>
-        <a href="https://youtube.com/@akatsuki2555">
-          <button>
-            <h3>YouTube</h3>
-          </button>
-        </a>
-        <a href="https://tiktok.com/@mldkyt">
-          <button>
-            <h3>TikTok</h3>
-          </button>
-        </a>
-        <a href="https://twitch.tv/akatsuki2555">
-          <button>
-            <h3>Twitch</h3>
-          </button>
-        </a>
-        <a href="https://twitter.com/akatsuki2555">
-          <button>
-            <h3>Twitter</h3>
-          </button>
-        </a>
-        <a href="https://reddit.com/u/Akatsuki230">
-          <button>
-            <h3>Reddit</h3>
-          </button>
-        </a>
-        <a href="https://instagram.com/akatsuki.230">
-          <button>
-            <h3>Instagram</h3>
-          </button>
-        </a>
-        <a href="https://next.nexusmods.com/profile/Akatsuki2555/about-me">
-          <button>
-            <h3>NexusMods</h3>
-          </button>
-        </a>
+      <div class={socialStyles.projectContainer}>
+        {Object.entries({
+          discord: "https://discord.com/invite/456zRGz75j",
+          youtube: "https://www.youtube.com/channel/UCbxX6X30K54_bxZK3t7e8ZA",
+          tiktok: "https://www.tiktok.com/@akatsuki2555",
+          twitch: "https://www.twitch.tv/akatsuki2555",
+          twitter: "https://twitter.com/akatsuki2555",
+          reddit: "https://www.reddit.com/user/Akatsuki230",
+          instagram: "https://www.instagram.com/akatsuki.230",
+          nexusmods: "https://www.nexusmods.com/users/11530875",
+        }).map(([name, url], i) => (
+          <a href={url}>
+            <div
+              class={socialStyles.project}
+              style={`background-image: url(/misc/socials/${name}.webp)`}
+            >
+              <h3>{name}</h3>
+            </div>
+          </a>
+        ))}
       </div>
     </main>
 
