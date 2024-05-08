@@ -10,135 +10,189 @@ import indexing from "@components/new_index.json";
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <Meta
-            name="Search Nekoweb"
-            description="Search the entirety of Nekoweb, including all website's content."
-        />
-        <Scripts />
-        <Cursor />
-    </head>
+  <head>
+    <Meta name="Search Nekoweb" description="Search the entirety of Nekoweb, including all website's content." />
+    <Scripts />
+    <Cursor />
+  </head>
 
-    <body>
-        <Header />
-        <main>
-            <h1>Nekoweb Search</h1>
-            <p>
-                Search all websites, including all content, instantly. The
-                website index was last updated 2024/05/07. I plan to reindex
-                this every month.
-            </p>
-            <p id="searchResultStatus"></p>
-            <label for="search">Search:</label>
-            <input type="text" id="search" />
+  <body>
+    <Header />
+    <main>
+      <h1>Nekoweb Search</h1>
+      <p>Search all websites, including all content, instantly. The website index was last updated 2024/05/08. I plan to reindex this every month, so the next reindex will be on 2024/06/01.</p>
+      <p id="searchResultStatus"></p>
+      <span>Search</span>
+      <select id="searchWhat">
+        <option value="content" selected>website content for:</option>
+        <option value="titles">website titles for:</option>
+        <option value="link">websites by link:</option>
+        <option value="to">websites that have this link:</option>
+        <option value="from">websites that have a link to this link:</option>
+      </select>
+      <input type="text" id="search" />
 
-            <div id="searchResults"></div>
+      <div id="searchResults"></div>
 
-            <script is:inline define:vars={{ indexing }}>
-                function shortenString(string, limit) {
-                    if (string.length <= limit) {
-                        return string;
-                    }
+      <script is:inline define:vars={{ indexing }}>
+        function shortenString(string, limit) {
+          if (string.length <= limit) {
+            return string;
+          }
 
-                    let shortenedString = "";
-                    let currentLength = 0;
-                    const words = string.split(" ");
+          let shortenedString = "";
+          let currentLength = 0;
+          const words = string.split(" ");
 
-                    for (let i = 0; i < words.length; i++) {
-                        const word = words[i];
-                        const wordLength = word.length;
+          for (let i = 0; i < words.length; i++) {
+            const word = words[i];
+            const wordLength = word.length;
 
-                        if (currentLength + wordLength <= limit) {
-                            shortenedString += word + " ";
-                            currentLength += wordLength + 1; // Add 1 for the space
-                        } else {
-                            break;
-                        }
-                    }
+            if (currentLength + wordLength <= limit) {
+              shortenedString += word + " ";
+              currentLength += wordLength + 1; // Add 1 for the space
+            } else {
+              break;
+            }
+          }
 
-                    return shortenedString.trim() + "...";
+          return shortenedString.trim() + "...";
+        }
+
+        /** @type {HTMLInputElement} */
+        let searchInput = document.getElementById("search");
+        /** @type {HTMLSelectElement} */
+        let searchType = document.getElementById("searchWhat");
+        /** @type {HTMLDivElement} */
+        let searchResults = document.getElementById("searchResults");
+        /** @type {HTMLParagraphElement} */
+        let searchResultStatus = document.getElementById("searchResultStatus");
+
+        function addToSearchResults(item, counter) {
+          if (counter > 10) {
+            return;
+          }
+          let el = document.createElement("div");
+
+          let title = document.createElement("h2");
+          el.appendChild(title);
+
+          let titleLink = document.createElement("a");
+          titleLink.href = item.url;
+          titleLink.innerText = item.title;
+          title.appendChild(titleLink);
+
+          let shortDesc = document.createElement("p");
+          shortDesc.innerText = shortenString(item.body, 250);
+          el.appendChild(shortDesc);
+
+          searchResults.appendChild(el);
+        }
+
+        function search() {
+          console.log("Search: " + searchInput.value);
+          searchResults.innerHTML = "";
+
+          let items = 0;
+
+          for (const item of indexing) {
+            if (item.title == null) {
+              item.title = "Untitled";
+            }
+            switch (searchType.value) {
+              case "content": {
+                if (item.title.toLowerCase().includes(searchInput.value.toLowerCase()) || item.body.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                  addToSearchResults(item, items);
+                  items++;
                 }
+                break;
+              }
+              case "titles": {
+                if (item.title.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                  addToSearchResults(item, items);
+                  items++;
+                }
+                break;
+              }
+              case "link": {
+                if (item.url.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                  addToSearchResults(item, items);
+                  items++;
+                }
+              }
+              case "to": {
+                for (let link of item.links_from) {
+                  if (link.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                    addToSearchResults(item, items);
+                    items++;
+                  }
+                }
+              }
+              case "from": {
+                for (let link of item.links_to) {
+                  if (link.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                    addToSearchResults(item, items);
+                    items++;
+                  }
+                }
+                break;
+              }
+            }
+          }
 
-                /** @type {HTMLInputElement} */
-                let searchInput = document.getElementById("search");
-                /** @type {HTMLDivElement} */
-                let searchResults = document.getElementById("searchResults");
-                /** @type {HTMLParagraphElement} */
-                let searchResultStatus =
-                    document.getElementById("searchResultStatus");
-                searchInput.oninput = function search() {
-                    console.log("Search: " + searchInput.value);
-                    searchResults.innerHTML = "";
+          if (items === 0) {
+            searchResultStatus.textContent = "No results found.";
+          } else if (items === 1) {
+            searchResultStatus.textContent = "1 result found.";
+          } else {
+            searchResultStatus.textContent = `${items} results found. ${items > 10 ? "Results limited to 10 to improve performance." : ""}`;
+          }
+        }
 
-                    let items = 0;
+        let timeout = null;
 
-                    for (const item of indexing) {
-                        if (items > 10) {
-                            break;
-                        }
-                        if (item.title == null) {
-                            item.title = "Untitled";
-                        }
-                        if (
-                            item.title
-                                .toLowerCase()
-                                .includes(searchInput.value.toLowerCase()) ||
-                            item.body
-                                .toLowerCase()
-                                .includes(searchInput.value.toLowerCase())
-                        ) {
-                            let el = document.createElement("div");
+        searchInput.onchange = search;
+        searchInput.oninput = () => {
+          if (timeout != null) {
+            clearTimeout(timeout);
+            timeout = null;
+          }
 
-                            let title = document.createElement("h2");
-                            el.appendChild(title);
+          timeout = setTimeout(search, 500);
+        };
+        searchType.onchange = search;
+      </script>
 
-                            let titleLink = document.createElement("a");
-                            titleLink.href = item.url;
-                            titleLink.innerText = item.title;
-                            title.appendChild(titleLink);
-
-                            let shortDesc = document.createElement("p");
-                            shortDesc.innerText = shortenString(item.body, 250);
-                            el.appendChild(shortDesc);
-
-                            searchResults.appendChild(el);
-
-                            items++;
-                        }
-                    }
-
-                    if (items === 0) {
-                        searchResultStatus.textContent = "No results found.";
-                    } else if (items === 1) {
-                        searchResultStatus.textContent = "1 result found.";
-                    } else {
-                        searchResultStatus.textContent = `${items} results found. ${items > 10 ? "Some results have been hidden to improve performance." : ""}`;
-                    }
-                };
-            </script>
-
-            <br>
-            <br>
-            <h2>To Do</h2>
-            <ul>
-                <li>
-                    <input type="checkbox" checked disabled>
-                    Index
-                </li>
-                <li>
-                    <input type="checkbox" checked disabled>
-                    Open source
-                </li>
-                <li>
-                    <input type="checkbox" disabled>
-                    "link:" searches pages that have this specific link linked
-                </li>
-                <li>
-                    <input type="checkbox" disabled>
-                    "site:" searches content on a specific nekoweb site
-                </li>
-            </ul>
-        </main>
-        <Footer />
-    </body>
+      <br />
+      <br />
+      <h2>To Do</h2>
+      <ul>
+        <li>
+          <input type="checkbox" checked disabled />
+          Index
+        </li>
+        <li>
+          <input type="checkbox" checked disabled />
+          Open source
+        </li>
+        <li>
+          <input type="checkbox" disabled checked/>
+          search pages that have this specific link linked
+        </li>
+        <li>
+          <input type="checkbox" disabled checked/>
+          search pages that have link to this specific link
+        </li>
+				<li>
+					<input type="checkbox" disabled/>
+					multiple filters
+				</li>
+				<li>
+					<input type="checkbox" disabled/>
+					sorting options
+				</li>
+      </ul>
+    </main>
+    <Footer />
+  </body>
 </html>
