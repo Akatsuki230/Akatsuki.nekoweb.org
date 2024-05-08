@@ -9,6 +9,10 @@
     image-rendering: crisp-edges !important;
 }
 
+:root {
+    color-scheme: dark;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
