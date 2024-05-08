@@ -13,7 +13,8 @@ Set-Location -Path .\scripts
 
 Write-Output "Getting cursoreffects.js..."
 
-curl.exe -o cursoreffects.js https://unpkg.com/cursor-effects@latest/dist/browser.js
+curl.exe -Lo cursoreffects.js https://unpkg.com/cursor-effects@latest/dist/browser.js
+curl.exe -Lo jquery.js https://code.jquery.com/jquery-3.7.1.min.js
 
 Write-Output "Finished. You can now start."
 

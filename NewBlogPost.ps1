@@ -44,6 +44,8 @@ export const date = "$Year-$Month-$Day";
 import Header from "@components/header.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
+import Scripts from "@components/scripts.astro";
+import Cursor from "@components/cursor.astro";
 ---
 
 <!doctype html>
@@ -54,6 +56,8 @@ import Meta from "@components/meta.astro";
             description="$Description"
             tag=""
         />
+        <Scripts />
+        <Cursor />
     </head>
     <body>
         <Header />
