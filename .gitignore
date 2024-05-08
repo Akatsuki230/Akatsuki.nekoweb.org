@@ -30,3 +30,6 @@ src/components/new_index.json
 
 # public scripts (download using GetThirdParty.ps1)
 public/scripts/
+
+# webdata
+webdata.json
