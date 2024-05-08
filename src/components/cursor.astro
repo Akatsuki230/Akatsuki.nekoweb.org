@@ -1,33 +1,36 @@
-<script>
-    import { fairyDustCursor, rainbowCursor } from "cursor-effects";
+<script is:inline src="/scripts/cursoreffects.js"></script>
+<script is:inline defer>
     window.addEventListener("load", (event) => {
         if (localStorage.getItem("cursorSetting") == "disable") {
             return;
         }
 
-        fairyDustCursor({
+        cursoreffects.fairyDustCursor({
             colors: ["#5BCEFA", "#F5A9B8", "#FFFFFF"],
         });
-        rainbowCursor({
+        cursoreffects.rainbowCursor({
             colors: ["lightblue", "pink", "white", "pink", "lightblue"],
             length: 50,
             size: 5
         });
     });
 
-    // Footer toggle cursor switch    
-    let enableCursor = document.getElementById("enablecursor") as HTMLInputElement;
-    enableCursor.checked = localStorage.getItem("cursorSetting") != "disable";
-    enableCursor.onchange = function toggleCursor() {
-        if (enableCursor.checked) {
-            if (localStorage.getItem("cursorSetting") != null) {
-                localStorage.removeItem("cursorSetting");
+    window.onload = function setUpEnableCursor() {
+        // Footer toggle cursor switch    
+        /** @type {HTMLInputElement} */
+        let enableCursor = document.getElementById("enablecursor");
+        enableCursor.checked = localStorage.getItem("cursorSetting") != "disable";
+        enableCursor.onchange = function toggleCursor() {
+            if (enableCursor.checked) {
+                if (localStorage.getItem("cursorSetting") != null) {
+                    localStorage.removeItem("cursorSetting");
+                }
             }
-        }
-        else {
-            localStorage.setItem("cursorSetting", "disable");
-        }
+            else {
+                localStorage.setItem("cursorSetting", "disable");
+            }
 
-        location.reload();
+            location.reload();
+        }
     }
 </script>
