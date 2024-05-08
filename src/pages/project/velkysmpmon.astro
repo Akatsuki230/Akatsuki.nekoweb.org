@@ -1,0 +1,112 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <Meta name="VelkySMP Monitor" description="VelkySMP Monitor" />
+        <Scripts />
+        <Cursor />
+    </head>
+
+    <body>
+        <Header />
+        <main>
+            <h1>VelkySMP Monitor</h1>
+            <section>
+                <h2>Dive into the Heart of VelkySMP</h2>
+                <p>
+                    VelkySMP Monitor offers a window into the bustling world of
+                    our Minecraft server, VelkySMP.
+                </p>
+            </section>
+
+            <section>
+                <h2>Unveiling the Server Part</h2>
+                <p>
+                    At its core lies a nimble Python script, tirelessly
+                    gathering data from the server. This data undergoes a
+                    transformative journey through both local and remote
+                    databases.
+                </p>
+
+                <h3>Local Database:</h3>
+                <ul>
+                    <li>
+                        Catalogs current online players alongside their login
+                        and logout activities.
+                    </li>
+                    <li>
+                        Empowers the Python script to compute playtime with
+                        precision.
+                    </li>
+                </ul>
+
+                <h3>Remote Database:</h3>
+                <ul>
+                    <li>
+                        Chronicles a comprehensive log of server activities.
+                    </li>
+                    <li>
+                        Captures individual playtime metrics and personalized
+                        player customizations.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Embark on a Journey with the Website</h2>
+                <p>
+                    Our website serves as the gateway to this dynamic universe,
+                    offering a panoramic view of server activities.
+                </p>
+
+                <h3>Unraveling the Interface:</h3>
+                <ul>
+                    <li>
+                        Effortlessly browse through the roster of players on our
+                        homepage.
+                    </li>
+                    <li>
+                        Seamlessly group players based on various criteria like
+                        online status, playtime, or even their name's initial.
+                    </li>
+                </ul>
+
+                <h3>Tailored Experience:</h3>
+                <ul>
+                    <li>
+                        Customize your profile with pride flags, country
+                        insignias, and more.
+                    </li>
+                    <li>
+                        Personalize your display name, add a star beside your
+                        username, and showcase your last played time.
+                    </li>
+                </ul>
+            </section>
+
+            <p>
+                VelkySMP Monitor isn't just a tool; it's a portal to community
+                engagement and immersive gameplay experiences. Join us as we
+                embark on this thrilling adventure together! 🌟🎮
+            </p>
+
+            <p>
+                <a href="https://velkysmp-mon.vercel.app/">
+                    <button>Download</button>
+                </a>
+                <a href="https://discord.gg/velky">
+                    <button>Velky's Discord server</button>
+                </a>
+            </p>
+        </main>
+        <Footer />
+    </body>
+</html>
