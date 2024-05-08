@@ -13,7 +13,11 @@ import Cursor from "@components/cursor.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <Meta name="Project List" description="List of Akatsuki's projects" tag="My Summer Car Meshsave, Astolfo is coming for you, AstolfOS, Astolfo Forge, Astolfo Resource Pack, Akabot, Catgirl Nonsense, Akatsuki, copyright: アカツキ, email: akatsuki2555@waifu.club" />
+    <Meta
+      name="Project List"
+      description="List of Akatsuki's projects"
+      tag="My Summer Car Meshsave, Astolfo is coming for you, AstolfOS, Astolfo Forge, Astolfo Resource Pack, Akabot, Catgirl Nonsense, Akatsuki, copyright: アカツキ, email: akatsuki2555@waifu.club"
+    />
     <Scripts />
     <Cursor />
   </head>
@@ -23,12 +27,6 @@ import Cursor from "@components/cursor.astro";
     <main>
       <h1>Akatsuki's projects</h1>
       <p>This is a list of Akatsuki's projects.</p>
-      <div class={projectStyles.error}>
-        <p>Looking for My Summer Car mods? she have moved.</p>
-        <a href="/mscmods">
-          <button>Go to My Summer Car mods</button>
-        </a>
-      </div>
       <div class={projectStyles.projectContainer}>
         <a href="/project/velkonya">
           <div
@@ -36,7 +34,11 @@ import Cursor from "@components/cursor.astro";
             style="background-image: url(/project/velkonya/1.webp);"
           >
             <h3>Velkonya</h3>
-            
+          </div>
+        </a>
+        <a href="/project/velkysmpmon">
+          <div class={projectStyles.project}>
+            <h3>VelkySMP monitor</h3>
           </div>
         </a>
         <a href="/project/astolfoiscomingforyou">
@@ -45,7 +47,6 @@ import Cursor from "@components/cursor.astro";
             style="background-image: url(/project/astolfoiscomingforyou/safe_1.webp);"
           >
             <h3>Astolfo is coming for you</h3>
-            
           </div>
         </a>
         <a href="/project/astolfos">
@@ -54,7 +55,6 @@ import Cursor from "@components/cursor.astro";
             style="background-image: url(/project/astolfos/neofetch.webp);"
           >
             <h3>AstolfOS</h3>
-            
           </div>
         </a>
         <a href="/project/astolfoforge">
@@ -63,7 +63,6 @@ import Cursor from "@components/cursor.astro";
             style="background-image: url(/project/astolfoforge/biome.webp);"
           >
             <h3>Astolfo Forge</h3>
-            
           </div>
         </a>
         <a href="/project/astolforesourcepack">
@@ -72,7 +71,6 @@ import Cursor from "@components/cursor.astro";
             style="background-image: url(/project/astolforesourcepack/menu.webp);"
           >
             <h3>Astolfo Resource Pack</h3>
-            
           </div>
         </a>
         <a href="/project/akabot">
@@ -81,7 +79,6 @@ import Cursor from "@components/cursor.astro";
             style="background-image: url(/project/akabot/Discord_70tNHM1QLB.png);"
           >
             <h3>Akabot</h3>
-            
           </div>
         </a>
         <a href="/project/catgirlnonsense">
@@ -90,7 +87,105 @@ import Cursor from "@components/cursor.astro";
             style="background-image: url(/project/catgirlnonsense/chrome_oBHNCyfNts.png);"
           >
             <h3>Catgirl Nonsense</h3>
-            
+          </div>
+        </a>
+      </div>
+      <h2>My Summer Car mods</h2>
+      <div class={projectStyles.projectContainer}>
+        <a href="/project/regplatechanger">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/regplatechanger/1.webp);"
+          >
+            <h3>Reg Plate Changer</h3>
+          </div>
+        </a>
+        <a href="/project/waterbills">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/waterbills/header.webp);"
+          >
+            <h3>Water Bills</h3>
+          </div>
+        </a>
+        <a href="/project/highwaycarbreakdowns">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/highwaycarbreakdowns/1.webp);"
+          >
+            <h3>Highway Car Breakdowns</h3>
+          </div>
+        </a>
+        <a href="/project/owoifier">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/owoifier/5408-1713711312-294742146.webp);"
+          >
+            <h3>OwOifier</h3>
+          </div>
+        </a>
+        <a href="/project/msclgbtprideflags">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/msclgbtprideflags/1.webp);"
+          >
+            <h3>LGBTQ Pride Flags</h3>
+          </div>
+        </a>
+        <a href="/project/asphaltroads">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/asphaltroads/1.webp);"
+          >
+            <h3>Asphalt Roads</h3>
+          </div>
+        </a>
+        <a href="/project/msctweaks">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/msctweaks/1.webp);"
+          >
+            <h3>MSC Tweaks</h3>
+          </div>
+        </a>
+        <a href="/project/oldcarsounds">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/oldcarsounds/1.webp);"
+          >
+            <h3>OldCarSounds</h3>
+          </div>
+        </a>
+        <a href="/project/oldtrucksounds">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/oldtrucksounds/1.webp);"
+          >
+            <h3>Old Truck Sounds</h3>
+          </div>
+        </a>
+        <a href="/project/oldhayosiko">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/oldhayosiko/1.webp);"
+          >
+            <h3>Old Hayosiko</h3>
+          </div>
+        </a>
+        <a href="/project/oldkekmet">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/oldkekmet/1.webp);"
+          >
+            <h3>Old Kekmet</h3>
+          </div>
+        </a>
+        <a href="/project/oldferndale">
+          <div
+            class={projectStyles.project}
+            style="background-image: url(/project/oldferndale/1.webp);"
+          >
+            <h3>Old Ferndale</h3>
           </div>
         </a>
       </div>
