@@ -22,7 +22,6 @@ Get-ChildItem -Recurse -File *.png | Remove-Item
 Get-ChildItem -Recurse -File *.jpg | Remove-Item
 Get-ChildItem -Recurse -File *.jpeg | Remove-Item
 Get-ChildItem -Recurse -File *.svg | Remove-Item
-Remove-Item -Recurse -Path '_astro'
 
 # Compress
 Compress-Archive -Path * -DestinationPath dist.zip
