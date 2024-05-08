@@ -35,7 +35,8 @@ import Cursor from "@components/cursor.astro";
 
             <script>
                 import indexing from '@components/new_index.json';
-                function shortenString(string, limit) {
+
+                function shortenString(string: string, limit: number) {
                     if (string.length <= limit) {
                         return string;
                     }

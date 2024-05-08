@@ -14,4 +14,20 @@
             size: 5
         });
     });
+
+    // Footer toggle cursor switch    
+    let enableCursor = document.getElementById("enablecursor") as HTMLInputElement;
+    enableCursor.checked = localStorage.getItem("cursorSetting") != "disable";
+    enableCursor.onchange = function toggleCursor() {
+        if (enableCursor.checked) {
+            if (localStorage.getItem("cursorSetting") != null) {
+                localStorage.removeItem("cursorSetting");
+            }
+        }
+        else {
+            localStorage.setItem("cursorSetting", "disable");
+        }
+
+        location.reload();
+    }
 </script>

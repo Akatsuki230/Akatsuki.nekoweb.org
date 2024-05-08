@@ -1,21 +1,6 @@
+
+
 <p>
     <input type="checkbox" name="enablecursor" id="enablecursor">
-    <label for="enablecursor">Enable Cursor Effects</label>
+    <label for="enablecursor">Enable Cursor Effects <i>(thank you <a href="https://bee.nekoweb.org">bee</a> for allowing me to steal this)</i></label>
 </p>
-
-<script>
-    let enableCursor = document.getElementById("enablecursor") as HTMLInputElement;
-    enableCursor.checked = localStorage.getItem("cursorSetting") != "disable";
-    enableCursor.onchange = function toggleCursor() {
-        if (enableCursor.checked) {
-            if (localStorage.getItem("cursorSetting") != null) {
-                localStorage.removeItem("cursorSetting");
-            }
-        }
-        else {
-            localStorage.setItem("cursorSetting", "disable");
-        }
-
-        location.reload();
-    }
-</script>
