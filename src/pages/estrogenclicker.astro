@@ -1,0 +1,57 @@
+---
+import Scripts from "@components/scripts.astro";
+import Meta from "@components/meta.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name=""
+      description=""
+    />
+    <Scripts />
+    <style>
+        .maingrid {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left {
+            width: 400px;
+            grid-area: left;
+        }
+
+        .right {
+            width: calc(100% - 400px);
+            grid-area: right;
+        }
+
+        .heading {
+            width: 400px;
+            background-color: #111;
+            color: white;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="maingrid">
+        <div class="left">
+            <div class="heading">
+                <span>Estrogen: 0kg</span>
+                <span>Money: $0</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="tabs">
+                <div class="tab active">Upgrades</div>
+            </div>
+            <div class="upgrade">
+                <h3>Trans girl</h3>
+                <p>She will click the estrogen with you because she wants estrogen too</p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
