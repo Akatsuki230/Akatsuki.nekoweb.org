@@ -32,10 +32,27 @@ import indexing from "@components/new_index.json";
       </select>
       <input type="text" id="search" />
       <br>
+      <span>and</span>
+      <select id="searchWhat2">
+        <option value="none" selected>no second filter.</option>
+        <option value="content">website content for:</option>
+        <option value="titles">website titles for:</option>
+        <option value="link">websites by link:</option>
+        <option value="from">websites containing links:</option>
+        <option value="to">websites that have a link to this link:</option>
+      </select>
+      <input type="text" id="search2" />
+      <br>
       <select id="searchSort">
         <option value="no">do not sort, will be displayed by when it was indexed</option>
         <option value="linked">sort by how many times the website was linked</option>
         <option value="links">sort by how many links this website has</option>
+        <option value="az">sort by titles from a to z</option>
+        <option value="za">sort by titles from z to a</option>
+        <option value="titleLenDesc">sort by titles from longest to shortest</option>
+        <option value="titleLenAsc">sort by titles from shortest to longest</option>
+        <option value="contentLenDesc">sort by content from longest to shortest</option>
+        <option value="contentLenAsc">sort by content from shortest to longest</option>
       </select>
 
       <div id="searchResults"></div>
@@ -75,6 +92,10 @@ import indexing from "@components/new_index.json";
         let searchResultStatus = document.getElementById("searchResultStatus");
         /** @type {HTMLSelectElement} */
         let searchSort = document.getElementById("searchSort");
+        /** @type {HTMLSelectElement} */
+        let searchWhat2 = document.getElementById("searchWhat2");
+        /** @type {HTMLInputElement} */
+        let searchInput2 = document.getElementById("search2");
 
         function addToSearchResults(item, counter) {
           if (counter > 10) {
@@ -98,7 +119,6 @@ import indexing from "@components/new_index.json";
         }
 
         function search() {
-          console.log("Search: " + searchInput.value);
           searchResults.innerHTML = "";
 
           let items = [];
@@ -136,6 +156,45 @@ import indexing from "@components/new_index.json";
             }
           }
 
+          let newItems = [];
+          for (const item of items) {
+            switch (searchWhat2.value) {
+              case "content": {
+                if (item.body.toLowerCase().includes(searchInput2.value.toLowerCase())) {
+                  newItems.push(item);
+                }
+                break;
+              }
+              case "titles": {
+                if (item.title.toLowerCase().includes(searchInput2.value.toLowerCase())) {
+                  newItems.push(item);
+                }
+                break;
+              }
+              case "link": {
+                if (item.url.toLowerCase().includes(searchInput2.value.toLowerCase())) {
+                  newItems.push(item);
+                }
+                break;
+              }
+              case "from": {
+                if (item.links_from.includes(searchInput2.value)) {
+                  newItems.push(item);
+                }
+              }
+              case "to": {
+                if (item.links_to.includes(searchInput2.value)) {
+                  newItems.push(item);
+                }
+              }
+              case "none": {
+                newItems.push(item);
+              }
+            }
+          }
+
+          items = newItems;
+
           switch (searchSort.value) {
             case "no": {
               break;
@@ -146,6 +205,30 @@ import indexing from "@components/new_index.json";
             }
             case "links": {
               items.sort((a, b) => b.links_to.length - a.links_to.length);
+              break;
+            }
+            case "az": {
+              items.sort((a, b) => a.title.localeCompare(b.title));
+              break;
+            }
+            case "za": {
+              items.sort((a, b) => b.title.localeCompare(a.title));
+              break;
+            }
+            case "titleLenDesc": {
+              items.sort((a, b) => b.title.length - a.title.length);
+              break;
+            }
+            case "titleLenAsc": {
+              items.sort((a, b) => a.title.length - b.title.length);
+              break;
+            }
+            case "contentLenDesc": {
+              items.sort((a, b) => b.body.length - a.body.length);
+              break;
+            }
+            case "contentLenAsc": {
+              items.sort((a, b) => a.body.length - b.body.length);
               break;
             }
           }
@@ -176,37 +259,10 @@ import indexing from "@components/new_index.json";
         };
         searchType.onchange = search;
         searchSort.onchange = search;
+        searchWhat2.onchange = search;
+        searchInput2.oninput = search;
       </script>
 
-      <br />
-      <br />
-      <h2>To Do</h2>
-      <ul>
-        <li>
-          <input type="checkbox" checked disabled />
-          Index
-        </li>
-        <li>
-          <input type="checkbox" checked disabled />
-          Open source
-        </li>
-        <li>
-          <input type="checkbox" disabled checked/>
-          search pages that have this specific link linked
-        </li>
-        <li>
-          <input type="checkbox" disabled checked/>
-          search pages that have link to this specific link
-        </li>
-				<li>
-					<input type="checkbox" disabled/>
-					multiple filters
-				</li>
-				<li>
-					<input type="checkbox" disabled/>
-					sorting options
-				</li>
-      </ul>
     </main>
     <Footer />
   </body>
