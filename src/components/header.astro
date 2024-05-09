@@ -1,16 +1,25 @@
 ---
 import searchStyles from '@styles/search.module.css';
+let imageLinks = [];
+(await Astro.glob("/public/project/**/*.webp")).forEach((img) => {
+  imageLinks.push(img.default.src.split("/public")[1].split("?")[0]);
+});
 ---
 
 <header>
   <div
     style="height: 150px; background-image: url(/misc/menherasuma/1.webp); background-position: center; background-size: cover;"
+    id="headerImage"
   >
     <div style="height: 150px; background-image: linear-gradient(to bottom, rgb(44, 44, 44), transparent 40%, rgb(44, 44, 44) 100%);">
       <h2 style="font-size: 2em; position: relative; left: 25px; top: 25px;">Akatsuki's website!</h2>
       <p style="position: relative; left: 25px; top: 20px;">Welcome to Akatsuki's website!</p>
     </div>
   </div>
+  <script is:inline define:vars={{ imageLinks }}>
+    const imageLink = imageLinks[Math.floor(Math.random() * imageLinks.length)];
+    $("#headerImage").css("background-image", `url(${imageLink})`);
+  </script>
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
