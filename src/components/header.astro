@@ -1,9 +1,5 @@
 ---
 import searchStyles from '@styles/search.module.css';
-let imageLinks = [];
-(await Astro.glob("/public/project/**/*.webp")).forEach((img) => {
-  imageLinks.push(img.default.src.split("/public")[1].split("?")[0]);
-});
 ---
 
 <header>
@@ -16,7 +12,57 @@ let imageLinks = [];
       <p style="position: relative; left: 25px; top: 20px;">Welcome to Akatsuki's website!</p>
     </div>
   </div>
-  <script is:inline define:vars={{ imageLinks }}>
+  <script is:inline>
+    const imageLinks = [
+      '/project/asphaltroads/1.webp',
+      '/project/astolfoforge/armor.webp',
+      '/project/astolfoforge/astolfoflower.webp',
+      '/project/astolfoforge/biome.webp',
+      '/project/astolfoforge/casual.webp',
+      '/project/astolfoforge/crowd.webp',
+      '/project/astolfoforge/schoolgirl.webp',
+      '/project/astolfoiscomingforyou/evil_1.webp',
+      '/project/astolfoiscomingforyou/evil_2.webp',
+      '/project/astolfoiscomingforyou/safe_1.webp',
+      '/project/astolfoiscomingforyou/safe_2.webp',
+      '/project/astolforesourcepack/ending.webp',
+      '/project/astolforesourcepack/loading.webp',
+      '/project/astolforesourcepack/menu.webp',
+      '/project/astolfos/desktop.webp',
+      '/project/astolfos/neofetch.webp',
+      '/project/astolfos/settings.webp',
+      '/project/highwaycarbreakdowns/1.webp',
+      '/project/highwaycarbreakdowns/2.webp',
+      '/project/highwaycarbreakdowns/3.webp',
+      '/project/highwaycarbreakdowns/4.webp',
+      '/project/highwaycarbreakdowns/5.webp',
+      '/project/msclgbtprideflags/1.webp',
+      '/project/msctweaks/1.webp',
+      '/project/oldcarsounds/1.webp',
+      '/project/oldferndale/1.webp',
+      '/project/oldhayosiko/1.webp',
+      '/project/oldkekmet/1.webp',
+      '/project/oldkekmet/2.webp',
+      '/project/oldkekmet/3.webp',
+      '/project/oldtrucksounds/1.webp',
+      '/project/owoifier/5408-1713711312-294742146.webp',
+      '/project/owoifier/5408-1713711320-1233164915.webp',
+      '/project/owoifier/5408-1713711326-1653939359.webp',
+      '/project/owoifier/5408-1713711334-1472309579.webp',
+      '/project/owoifier/5408-1713711340-1988882114.webp',
+      '/project/regplatechanger/1.webp',
+      '/project/velkonya/0.webp',
+      '/project/velkonya/1.webp',
+      '/project/velkonya/2.webp',
+      '/project/velkonya/3.webp',
+      '/project/velkonya/4.webp',
+      '/project/velkonya/5.webp',
+      '/project/velkonya/6.webp',
+      '/project/velkonya/7.webp',
+      '/project/velkonya/8.webp',
+      '/project/velkonya/9.webp',
+      '/project/waterbills/header.webp'
+    ];
     const imageLink = imageLinks[Math.floor(Math.random() * imageLinks.length)];
     $("#headerImage").css("background-image", `url(${imageLink})`);
   </script>
