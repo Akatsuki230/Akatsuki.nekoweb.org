@@ -1,0 +1,41 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Old Highway Cars"
+      description="Old Highway Cars brings back the old Satsumas from build 173 of My Summer Car."
+    />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Old Highway Cars</h1>
+      <p style="color: yellow;">The old highway cars mod has been reuploaded after numerous requests. I privated it a long time ago but now it's back up.</p>
+      <p>This mod reverts all cars on the highway to Satsumas from build 173. This mod is most likely not compatible with Highway Car Breakdowns.</p>
+      <p>That's all the mod does.</p>
+      <h2>Images</h2>
+      <img src="/project/oldhighwaycars/1.webp" alt="Cars on highway">
+      <img src="/project/oldhighwaycars/2.webp" alt="Cars on highway">
+      <img src="/project/oldhighwaycars/3.webp" alt="Cars on highway">
+      <h2>Download</h2>
+      <p>
+        <a href="https://www.nexusmods.com/mysummercar/mods/5588/">
+            <button>Download from NexusMods</button>
+        </a>
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
