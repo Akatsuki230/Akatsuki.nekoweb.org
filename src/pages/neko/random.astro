@@ -1,0 +1,48 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import webList from '@components/web_list.json';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Random Nekoweb Website"
+      description="Jump to a random Nekoweb website."
+    />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Random Nekoweb Website</h1>
+      <br>
+      <br>
+      <button id="jump">JUMP!</button>
+      <br>
+      <br>
+      <script is:inline define:vars={{webList}}>
+        $("#jump").click(() => {
+          const randomIndex = Math.floor(Math.random() * webList.length);
+          window.location.href = 'https://' + webList[randomIndex];
+        })
+      </script>
+      <h2>How do I opt out?</h2>
+      <p>To opt out of this, it's the same as for Akatsuki Nekosearch. Simply open your robots.txt and add the following:</p>
+      <p>
+        <code>
+          User-agent: AkatsukiNekowebBot<br>
+          Disallow: *
+        </code>
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -56,6 +56,15 @@ import indexing from "@components/new_index.json";
       </select>
 
       <div id="searchResults"></div>
+      
+      <h2>How do I opt out?</h2>
+      <p>To opt out of this, it's the same as for Akatsuki Nekosearch. Simply open your robots.txt and add the following:</p>
+      <p>
+        <code>
+          User-agent: AkatsukiNekowebBot<br>
+          Disallow: *
+        </code>
+      </p>
 
       <script is:inline define:vars={{ indexing }}>
         function shortenString(string, limit) {
