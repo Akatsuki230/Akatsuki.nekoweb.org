@@ -18,6 +18,15 @@ import Cursor from "@components/cursor.astro";
     />
     <Scripts />
     <Cursor />
+    <style>
+      ul {
+        list-style-type: disc;
+      }
+
+      li {
+        margin-left: 1.1em;
+      }
+    </style>
   </head>
 
   <body>
@@ -26,28 +35,25 @@ import Cursor from "@components/cursor.astro";
       <h1>Welcome to Akatsuki's website!</h1>
       <img src="/pfp.webp" alt="Akatsuki" class={indexStyles.pfp} />
 
+      <h2>Short About me</h2>
       <p>
-        Akatsuki is a trans catgirl who writes code. She makes various content
+        I (Akatsuki) am a trans (cat)girl who writes code. I makes various content
         from YouTube videos to programming.
       </p>
       <p>
-        Her projects contain My Summer Car mods but she're not certainly
-        limited to only that. she makes other projects such as Akabot, Astolfo
+        I make My Summer Car mods but I am not certainly
+        limited to only that. I make other projects such as Akabot, Astolfo
         Forge mod, Astolfo is coming for you and many more.
       </p>
       <p>
-        Her My Summer Car mods include adding new features (Highway Car
+        My My Summer Car mods include adding new features (Highway Car
         Breakdowns), completely changing the balance of the game (Asphalt
         Roads), adding completely unseen content into the game (LGBTQ Pride
-        Flags) and even joke mods (OwOifier). she doesn't consider herself a My
+        Flags) and even joke mods (OwOifier). I don't consider myself a My
         Summer Car modder though.
       </p>
-      <p>
-        <a href="/history" class={indexStyles.link}>
-          If you want to get in detail of her past, you can read more about that
-          here.
-        </a>
-      </p>
+      <h2>My projects</h2>
+      <p>You can either view the project list here or you can click on it's dedicated page.</p>
       <a href="/projects">
         <div
           class={indexStyles.bigbtn}
@@ -57,13 +63,64 @@ import Cursor from "@components/cursor.astro";
           <span class={indexStyles.bigbtn2}>&rightarrow;</span>
         </div>
       </a>
+      <ul style="margin-top: 1em;">
+        <li><strong>Akabot</strong> also known as FemboyBot, is a bot that I made with lots of features, including Anti Raid, Chat Revive, Chat Streaks, Chat Summary, Feedback Commands, Leveling, Logging, Moderation, Polls, Reaction Roles, Settings and Welcoming. It's used on my server.</li>
+        <li><strong>Astolfo Forge Mod</strong> is a Minecraft mod adds a lot of femboys and trans girls into Minecraft. This mod doesn't add NSFW but it adds a few fun commands to mess around with.</li>
+        <li><strong>AstolfOS</strong> is a script that modifies your Linux distribution to make it more Astolfo like.</li>
+        <li><strong>Astolfo is coming for you</strong> is a <strike>virus</strike> program that makes Astolfo come to your house. Two variants are available, a friendly variant and an unfriendly variant.</li>
+      </ul>
+      <h2>My My Summer Car mods</h2>
+      <ul>
+        <li><strong>Reg Plate Changer</strong> is a mod that allows you to changer your registration plates.</li>
+        <li><strong>Water Bills</strong> adds water bills alongside electricity and phone bills.</li>
+        <li><strong>Highway Car Breakdowns</strong> adds car breakdowns on the highway, adding a new way to earn money.</li>
+        <li><strong>OwOifier</strong> is a joke mod that owoifies the game's text. Everything, including the mod loader and any texts in mods.</li>
+        <li><strong>LGBTQ Pride Flags</strong> adds pride flags and allows you to make custom ones.</li>
+        <li><strong>Asphalt Roads</strong> is a mod that adds asphalt roads to the game.</li>
+        <li><strong>MSC Tweaks</strong> adds a few tweaks to slightly change your gameplay.</li>
+        <li><strong>OldCarSounds</strong> reverts Satsuma sounds from the old versions of the game.</li>
+        <li><strong>Old Kekmet</strong> reverts the old Kekmet from older versions of the game.</li>
+        <li><strong>Old Ferndale</strong> reverts the old Ferndale from older versions of the game.</li>
+      </ul>
+      <p>More may appear here if things get added or I get ideas of what to put here.</p>
+      <h2>My history</h2>
+      <p>
+        <a href="/history" class={indexStyles.link}>
+          If you want to get in detail of my past, you can read more about that
+          here.
+        </a>
+      </p>
 
+      <h2>Follow me on Nekoweb</h2>
+      <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>
+
+      <h2>Buttons :3</h2>
+      <h3>My button</h3>
+      <p>You can add my button on my website, you'll have to download it and put it somewhere on your site.</p>
+      <img src="/button.gif" alt="88x31 button">
+
+      <h3>Other's buttons</h3>
+      <p><i>To be added...</i></p>
+
+      <h3>Webrings</h3>
+      <script src="https://transring.neocities.org/ring.js"></script>
+
+      <h2>Other links</h2>
       <a href="/discord"
         ><div
           class={indexStyles.bigbtn}
           style="background-image: url(/discord/Banner.webp);"
         >
           <span class={indexStyles.bigbtn1}>My Discord server</span>
+          <span class={indexStyles.bigbtn2}>&rightarrow;</span>
+        </div></a
+      >
+      <a href="/suggestion"
+        ><div
+          class={indexStyles.bigbtn}
+          style="background-image: url(/suggestions.jpg);"
+        >
+          <span class={indexStyles.bigbtn1}>Send suggestions for content!</span>
           <span class={indexStyles.bigbtn2}>&rightarrow;</span>
         </div></a
       >
