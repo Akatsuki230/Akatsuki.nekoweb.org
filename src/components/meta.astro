@@ -1,8 +1,8 @@
 ---
 interface Props {
-    name: string;
-    description: string;
-    tag?: string;
+  name: string;
+  description: string;
+  tag?: string;
 }
 
 let { name, description, tag } = Astro.props;
@@ -11,18 +11,18 @@ description = description.replace(/[aA]katsuki/g, "アカツキ");
 const author = "アカツキ";
 
 if (tag) {
-    tag = tag + ",";
+  tag = tag + ",";
 } else {
-    tag = "";
+  tag = "";
 }
 ---
 
+<meta charset="UTF-8" />
 <title>{name} | Akatsuki's website</title>
 <meta name="description" content={description} />
 <meta name="author" content={author} />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-language" content="en" />
 <meta property="og:title" content={`${name} | Akatsuki's website`} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
@@ -34,6 +34,6 @@ if (tag) {
 <meta name="twitter:description" content={description} />
 
 <meta
-    name="keywords"
-    content={`${tag}akatsuki,akatsuki,web development,programming,akatsuki,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming`}
+  name="keywords"
+  content={`${tag}akatsuki,akatsuki,web development,programming,akatsuki,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming`}
 />
