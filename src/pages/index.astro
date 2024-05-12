@@ -27,6 +27,7 @@ import Cursor from "@components/cursor.astro";
         margin-left: 1.1em;
       }
     </style>
+    <link rel="stylesheet" href="https://webring.nekoweb.org/onionring.css">
   </head>
 
   <body>
@@ -99,11 +100,17 @@ import Cursor from "@components/cursor.astro";
       <p>You can add my button on my website, you'll have to download it and put it somewhere on your site.</p>
       <img src="/button.gif" alt="88x31 button">
 
-      <h3>Other's buttons</h3>
-      <p><i>To be added...</i></p>
+      <h3>Buttons</h3>
+      <a href="https://districts.nekoweb.org/">
+        <img src="/buttons/districts.png" alt="88x31 button">
+      </a>
 
       <h3>Webrings</h3>
       <script is:inline src="https://transring.neocities.org/ring.js"></script>
+      <div id='nekowebring'>
+        <script is:inline type="text/javascript" src="https://webring.nekoweb.org/onionring-variables.js"></script>
+        <script is:inline type="text/javascript" src="https://webring.nekoweb.org/onionring-widget.js"></script>
+      </div>
 
       <h2>Other links</h2>
       <a href="/discord"
