@@ -10,15 +10,6 @@ if (!(Test-Path -Path .\public\scripts\cursoreffects.js)) {
     .\GetThirdParty.ps1
 }
 
-if (!(Test-Path -Path .\public\scripts\jquery.js)) {
-    Write-Output "Downloading scripts..."
-    .\GetThirdParty.ps1
-}
-
-# Get data
-
-curl.exe -H "User-Agent: AkatsukiWebBuilder/1.0" -o webdata.json https://nekoweb.org/api/site/info/akatsuki
-
 # Check data
 
 if (!(Test-Json -Path .\webdata.json)) {
@@ -45,6 +36,7 @@ Get-ChildItem -Recurse -File *.png | Remove-Item
 Get-ChildItem -Recurse -File *.jpg | Remove-Item
 Get-ChildItem -Recurse -File *.jpeg | Remove-Item
 Get-ChildItem -Recurse -File *.svg | Remove-Item
+Get-ChildItem -Recurse -File *.gif | Remove-Item
 
 # Compress
 Compress-Archive -Path * -DestinationPath dist.zip
