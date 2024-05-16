@@ -5,6 +5,8 @@ import Scripts from "@components/scripts.astro";
 import Footer from "@components/footer.astro";
 import Meta from "@components/meta.astro";
 import Cursor from "@components/cursor.astro";
+import Tabs from "@components/Tabs.astro";
+import Tab from "@components/Tab.astro";
 ---
 
 <!doctype html>
@@ -23,6 +25,14 @@ import Cursor from "@components/cursor.astro";
       .btns a {
         text-decoration: none;
       }
+
+      ul {
+        list-style-type: disc;
+      }
+
+      li {
+        margin-left: 1.2em;
+      }
     </style>
     <Meta name="AkaBot" description="A Discord bot by Akatsuki" tag="discord bot, server management, anti raid, chat revive, chat streaks, chat summary, feedback commands, leveling, logging, moderation, polls, reaction roles, settings, welcoming, blocked users, premium features" />
     <Scripts />
@@ -33,6 +43,11 @@ import Cursor from "@components/cursor.astro";
     <Header />
     <main>
       <h1>AkaBot</h1>
+      <Tabs>
+        <Tab href="/project/akabot" selected>About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+      </Tabs>
       <p>A Discord bot by Akatsuki.</p>
 
       <div class="btns">
