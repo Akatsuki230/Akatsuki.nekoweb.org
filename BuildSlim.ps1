@@ -37,6 +37,8 @@ Get-ChildItem -Recurse -File *.jpg | Remove-Item
 Get-ChildItem -Recurse -File *.jpeg | Remove-Item
 Get-ChildItem -Recurse -File *.svg | Remove-Item
 Get-ChildItem -Recurse -File *.gif | Remove-Item
+Get-ChildItem -Recurse -File *.ase | Remove-Item
+Get-ChildItem -Recurse -File *.txt | Remove-Item
 
 # Compress
 Compress-Archive -Path * -DestinationPath dist.zip
