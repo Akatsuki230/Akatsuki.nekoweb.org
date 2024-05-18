@@ -13,6 +13,18 @@
     color-scheme: dark;
 }
 
+/* Override ul and li beforehand to get overriden again by header */
+
+ul {
+    margin-bottom: 20px;
+    list-style-type: disc;
+}
+
+li {
+    color: #eee;
+    margin-left: 1.2em;
+}
+
 /* Header */
 header {
     max-width: 800px;
@@ -34,6 +46,7 @@ nav ul {
 nav li {
     display: inline;
     margin-right: 10px;
+    margin-left: 0;
 }
 
 nav a {
@@ -67,16 +80,6 @@ a:active {
 p {
     color: #eee;
     margin-bottom: 20px;
-}
-
-ul {
-    margin-bottom: 20px;
-    list-style-type: none;
-}
-
-li {
-    color: #eee;
-    margin-left: 4px;
 }
 
 img {

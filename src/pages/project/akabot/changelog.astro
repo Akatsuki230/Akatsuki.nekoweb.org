@@ -1,0 +1,63 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Akabot Changelog"
+      description="The changelog of Akabot, the Discord bot. See what's new and what's changed in the latest version."
+    />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Terms of Service</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos" >Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog" selected>Changelog</Tab>
+      </Tabs>
+      <h2>Version 3</h2>
+      <ul>
+        <li>Remove polls</li>
+        <li>Better permission checks</li>
+        <li>Fixes to chat streaks</li>
+        <li>Fixes to chat summary</li>
+        <li>Limitation of intents for verification</li>
+        <li>Privacy policy added on website</li>
+        <li>Terms of Service added on website</li>
+      </ul>
+      <h2>Version 2</h2>
+      <ul>
+        <li>The bot was converted to py-cord</li>
+      </ul>
+      <h2>Version 1.1</h2>
+      <ul>
+        <li>Chat Streaks</li>
+      </ul>
+      <h2>Version 1.01</h2>
+      <ul>
+        <li>Added chat revival</li>
+        <li>Added level up rewards</li>
+      </ul>
+      <h2>Initial release</h2>
+      <ul>
+        <li>Initial release</li>
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>
