@@ -1,4 +1,4 @@
-
+#!/bin/pwsh
 # Check scripts
 
 if (!(Test-Path -Path ./public/scripts/cursoreffects.js)) {
@@ -15,7 +15,7 @@ if (!(Test-Json -Path ./webdata.json)) {
 
 # Build
 
-pnpm
+pnpm install
 pnpm build
 
 Write-Output "Finished"

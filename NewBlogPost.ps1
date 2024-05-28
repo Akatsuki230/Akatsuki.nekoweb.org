@@ -1,3 +1,4 @@
+#!/bin/pwsh
 $Name = Read-Host -Prompt "Name"
 $Description = Read-Host -Prompt "Description"
 

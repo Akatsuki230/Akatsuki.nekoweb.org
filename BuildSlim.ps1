@@ -1,4 +1,4 @@
-
+#!/bin/pwsh
 # Slim Build script
 # Generates the site HTML without images, etc.
 # Useful when skipping uploading of images, etc.
@@ -18,7 +18,7 @@ if (!(Test-Json -Path ./webdata.json)) {
 }
 
 # Start by building
-pnpm
+pnpm install
 pnpm build
 
 Remove-Item -Recurse -Path ./dist2
