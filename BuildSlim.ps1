@@ -5,28 +5,28 @@
 
 # Check scripts
 
-if (!(Test-Path -Path .\public\scripts\cursoreffects.js)) {
+if (!(Test-Path -Path ./public/scripts/cursoreffects.js)) {
     Write-Output "Downloading scripts..."
-    .\GetThirdParty.ps1
+    ./GetThirdParty.ps1
 }
 
 # Check data
 
-if (!(Test-Json -Path .\webdata.json)) {
+if (!(Test-Json -Path ./webdata.json)) {
     Write-Output "Error: Invalid JSON data"
     exit
 }
 
 # Start by building
-yarn.cmd
-yarn.cmd build
+pnpm
+pnpm build
 
-Remove-Item -Recurse -Path .\dist2
+Remove-Item -Recurse -Path ./dist2
 
-Copy-Item -Recurse -Path .\dist -Destination .\dist2\
+Copy-Item -Recurse -Path ./dist -Destination ./dist2/
 
 # Change folder
-Set-Location -Path .\dist2
+Set-Location -Path ./dist2
 
 # Delete unnecessary files
 Get-ChildItem -Recurse -File *.webp | Remove-Item
