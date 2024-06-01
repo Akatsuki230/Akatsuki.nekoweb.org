@@ -46,3 +46,9 @@ a {
   color: rgb(103, 103, 255);
   text-decoration: underline;
 }
+
+.card { 
+  margin: 10px;
+  background-color: rgb(78, 78, 78);
+  margin: 5px;
+}
