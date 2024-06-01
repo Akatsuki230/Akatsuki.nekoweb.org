@@ -13,6 +13,7 @@
 
 .project h3 {
     padding: 6px 0;
+    height: 30px;
     font-size: medium;
     text-shadow: 2px 2px 2px #000;
     background-color: #333333aa;
@@ -25,7 +26,8 @@
     padding-left: 20px;
     color: #ffffff;
     text-shadow: 2px 2px 2px #000;
-    background: linear-gradient(to bottom, #333333aa 0%, #333333aa 70%, #33333300 100%);
+    background-color: #333333aa;
+    height: 70px;
 }
 
 .error {
