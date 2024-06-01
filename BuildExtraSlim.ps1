@@ -1,32 +1,32 @@
-#!/bin/pwsh
+
 # Slim Build script
 # Generates the site HTML without images, etc.
 # Useful when skipping uploading of images, etc.
 
 # Check scripts
 
-if (!(Test-Path -Path ./public/scripts/cursoreffects.js)) {
+if (!(Test-Path -Path .\public\scripts\cursoreffects.js)) {
     Write-Output "Downloading scripts..."
-    ./GetThirdParty.ps1
+    .\GetThirdParty.ps1
 }
 
 # Check data
 
-if (!(Test-Json -Path ./webdata.json)) {
+if (!(Test-Json -Path .\webdata.json)) {
     Write-Output "Error: Invalid JSON data"
     exit
 }
 
 # Start by building
-pnpm install
-pnpm build
+yarn install
+yarn build
 
-Remove-Item -Recurse -Path ./dist2
+Remove-Item -Recurse -Path .\dist2
 
-Copy-Item -Recurse -Path ./dist -Destination ./dist2/
+Copy-Item -Recurse -Path .\dist -Destination .\dist2\
 
 # Change folder
-Set-Location -Path ./dist2
+Set-Location -Path .\dist2
 
 # Delete unnecessary files
 Get-ChildItem -Recurse -File *.webp | Remove-Item
@@ -40,7 +40,7 @@ Get-ChildItem -Recurse -File *.gif | Remove-Item
 Get-ChildItem -Recurse -File *.txt | Remove-Item
 Get-ChildItem -Recurse -File *.ase | Remove-Item
 
-Remove-Item ./neko/search/index.html
+Remove-Item .\neko\search\index.html
 
 # Compress
 Compress-Archive -Path * -DestinationPath dist.zip

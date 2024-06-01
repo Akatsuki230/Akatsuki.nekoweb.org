@@ -1,14 +1,12 @@
-#!/bin/pwsh
-
 Write-Output "Downloading third party scripts..."
 
-Set-Location -Path ./public
+Set-Location -Path .\public
 
-if (!(Test-Path -Path ./scripts)) {
+if (!(Test-Path -Path .\scripts)) {
     mkdir scripts
 }
 
-Set-Location -Path ./scripts
+Set-Location -Path .\scripts
 
 # Download scripts
 
@@ -18,4 +16,4 @@ curl -Lo cursoreffects.js https://unpkg.com/cursor-effects@latest/dist/browser.j
 
 Write-Output "Finished. You can now start."
 
-Set-Location -Path ./../../
+Set-Location -Path .\..\..\
