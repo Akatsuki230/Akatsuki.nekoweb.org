@@ -16,14 +16,14 @@
 
 .social h3 {
     height: 100px;
+    width: 100%;
     font-size: large;
     text-align: center;
     text-shadow: 1px 1px 1px #000;
-    background: linear-gradient(to right, #333333aa 0%, #333333aa 90%, #33333300 100%);
+    background-color: #333333aa;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 40px;
 }
 
 .error {
