@@ -1,0 +1,62 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Logging Module" description="This module adds logging for a Discord server. It sends events into a logging channel." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Logging Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>This module adds logging for a Discord server. It sends events into a logging channel.</p>
+
+      <h3>Commands</h3>
+
+      <h4>Logging Settings</h4>
+
+      <h5>/logging list</h5>
+
+      <p>Description: Lists the current logging settings for the server, including the logging channel if set.</p>
+      <p>Required Permissions: Manage Server</p>
+      <p>Usage: /logging list</p>
+
+      <h5>/logging set_channel</h5>
+
+      <p>Description: Sets the logging channel for the server where logs will be sent.</p>
+      <p>Required Permissions: Manage Server</p>
+      <p>Usage: /logging set_channel &lt;#channel&gt;</p>
+
+      <h3>Functionality</h3>
+
+      <p>
+        The module logs various events occurring within the Discord server, including thread creation, update, and deletion, scheduled event creation, deletion, and update, reaction clearing, addition, and removal, voice state changes
+        (join, leave, move), member username changes, role assignments, role creations, updates, and deletions, invite creations, server setting changes (name, icon, banner, description, AFK channel, system messages channel, rules channel,
+        public updates channel, preferred language, owner), member bans, unbans, kicks, mutes, and unmutes, automod rule creations and deletions, sticker creations, updates, and deletions, and emoji creations, deletions, and updates.
+      </p>
+
+      <p>Users can configure the bot to send these logs to a specific channel by using the provided commands.</p>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -40,6 +40,7 @@ import Tab from "@components/Tab.astro";
         <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
         <Tab href="/project/akabot/tos">Terms of Service</Tab>
         <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs">Documentation</Tab>
       </Tabs>
       <p>A Discord bot by Akatsuki.</p>
 
@@ -62,37 +63,31 @@ import Tab from "@components/Tab.astro";
       <p>This Discord bot, crafted with care by a dedicated individual, provides numerous features to enrich your server experience. Below is a simple explanation of what this bot offers:</p>
       <ul>
         <li>
-          <strong>Anti Raid:</strong> This bot vigilantly monitors your server. If it detects a flurry of activities unfolding simultaneously, it sends you an alert, helping to ward off any potential raids on your server.
+          <strong>Anti Raid:</strong> Detects big join waves and kicks members accordingly.
         </li>
         <li>
-          <strong>Chat Revive:</strong> When your chat goes dormant for a stretch, this bot can spur the conversation back to life.
+          <strong>Chat Revive:</strong> Revives chat if it has been dead for a while.
         </li>
         <li>
-          <strong>Chat Streaks:</strong> If users send messages on successive days, this bot applauds these 'streaks', adding a fun element to your server interactions.
+          <strong>Chat Streaks:</strong> Encourages activity by counting consecutively sent messages.
         </li>
         <li>
-          <strong>Chat Summary:</strong> Each day, this bot can provide a tally of messages sent on your server, helping you keep track of daily communication.
+          <strong>Chat Summary:</strong> Every UTC midnight it summarizes the amount of messages sent in chats.
         </li>
         <li>
-          <strong>Feedback Commands:</strong> This bot can gather valuable remarks and suggestions from your users, fostering a feedback-rich environment.
+          <strong>Leveling:</strong> Counts XP from messages, calculate levels and give rewards for levels.
         </li>
         <li>
-          <strong>Leveling:</strong> This bot can establish a 'levels' system, rewarding active users, and promoting engagement.
+          <strong>Logging:</strong> Logs different events.
         </li>
         <li>
-          <strong>Logging:</strong> The bot can maintain a comprehensive record of activities on your server, ensuring transparency.
+          <strong>Moderation:</strong> Commands for kicking, banning and muting people, with DM’s.
         </li>
         <li>
-          <strong>Moderation:</strong> The bot comes equipped with 'ban', 'kick', and 'timeout' commands, aiding you in maintaining harmony on your server.
+          <strong>Reaction Roles:</strong> Buttons for creating reaction roles, with different behavior settings.
         </li>
         <li>
-          <strong>Reaction Roles:</strong> This bot enables users to choose her roles by reacting to a message, adding a layer of interactivity.
-        </li>
-        <li>
-          <strong>Settings:</strong> You can tweak the bot's settings to align with your server's requirements.
-        </li>
-        <li>
-          <strong>Welcoming:</strong> The bot can relay personalized welcome and goodbye messages to users, adding warmth to your server.
+          <strong>Welcome and Goodbye:</strong> Say welcome and say goodbye to members who join or leave.
         </li>
         <li>
           <strong>Giveaways:</strong> Host simple giveaways on your Discord server, with any ending date and custom reward.

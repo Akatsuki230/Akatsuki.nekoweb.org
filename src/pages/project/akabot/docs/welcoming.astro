@@ -1,0 +1,186 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Welcoming Module" description="This module allows adding welcome and goodbye messages on a Discord server." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Welcoming Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>This module allows adding welcome and goodbye messages on a Discord server.</p>
+
+      <h2>Commands</h2>
+
+      <h3>/welcome list</h3>
+
+      <ul>
+        <li><strong>Description:</strong> List the current welcoming settings.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/welcome list</code></li>
+      </ul>
+
+      <h3>/welcome channel</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set the channel where welcoming messages will be sent.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/welcome channel &lt;channel&gt;</code></li>
+      </ul>
+
+      <h3>/welcome type</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set whether to use message content or embed for welcoming messages.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Usage:</strong>
+          <code>/welcome type &lt;message_type&gt;</code>
+          <ul>
+            <li><code>&lt;message_type&gt;</code>: Choose from "embed" or "text".</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>/welcome title</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set the title of the welcoming message.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/welcome title &lt;title&gt;</code></li>
+      </ul>
+
+      <h3>/welcome text</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set the text of the welcoming message.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/welcome text &lt;text&gt;</code></li>
+      </ul>
+
+      <h3>/goodbye list</h3>
+
+      <ul>
+        <li><strong>Description:</strong> List the current goodbye settings.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/goodbye list</code></li>
+      </ul>
+
+      <h3>/goodbye channel</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set the channel where goodbye messages will be sent.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/goodbye channel &lt;channel&gt;</code></li>
+      </ul>
+
+      <h3>/goodbye type</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set whether to use message content or embed for goodbye messages.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Usage:</strong>
+          <code>/goodbye type &lt;message_type&gt;</code>
+          <ul>
+            <li><code>&lt;message_type&gt;</code>: Choose from "embed" or "text".</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>/goodbye title</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set the title of the goodbye message.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/goodbye title &lt;title&gt;</code></li>
+      </ul>
+
+      <h3>/goodbye text</h3>
+
+      <ul>
+        <li><strong>Description:</strong> Set the text of the goodbye message.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li><strong>Usage:</strong> <code>/goodbye text &lt;text&gt;</code></li>
+      </ul>
+
+      <h2>Functionality</h2>
+
+      <ul>
+        <li><strong>Welcoming Messages:</strong> Administrators can customize welcoming messages when members join the server, including the channel, message type (text or embed), title, and content.</li>
+        <li><strong>Goodbye Messages:</strong> Administrators can customize goodbye messages when members leave the server, including the channel, message type (text or embed), title, and content.</li>
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>

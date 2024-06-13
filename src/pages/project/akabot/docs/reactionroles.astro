@@ -1,0 +1,99 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Reaction Roles Module" description="This module allows users to assign or remove roles by reacting to messages containing specific buttons." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Reaction Roles Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>
+        This module allows users to assign or remove roles by reacting to messages containing specific buttons. It provides commands to create different types of reaction role setups, such as normal, add-only, remove-only, and single-choice
+        reaction roles.
+      </p>
+
+      <h3>Commands</h3>
+
+      <h4>/create_reaction_role normal</h4>
+
+      <ul>
+        <li><strong>Description:</strong> Create a normal reaction role setup where users can add and remove roles by reacting to buttons.</li>
+        <li><strong>Required Permissions:</strong> manage_roles</li>
+        <li><strong>Usage:</strong> /create_reaction_role normal &lt;message&gt; &lt;role&gt; [role_2] [role_3] [role_4] [role_5]</li>
+        <ul>
+          <li>&lt;message&gt;: The message content to send along with the reaction buttons.</li>
+          <li>&lt;role&gt;: Mention or ID of the role users can react to add or remove.</li>
+          <li>[role_2], [role_3], [role_4], [role_5]: Additional roles users can react to add or remove (optional).</li>
+        </ul>
+      </ul>
+
+      <h4>/create_reaction_role add_only</h4>
+
+      <ul>
+        <li><strong>Description:</strong> Create an add-only reaction role setup where users can only add roles by reacting to buttons.</li>
+        <li><strong>Required Permissions:</strong> manage_roles</li>
+        <li><strong>Usage:</strong> /create_reaction_role add_only &lt;message&gt; &lt;role&gt; [role_2] [role_3] [role_4] [role_5]</li>
+        <ul>
+          <li>&lt;message&gt;: The message content to send along with the reaction buttons.</li>
+          <li>&lt;role&gt;: Mention or ID of the role users can react to add.</li>
+          <li>[role_2], [role_3], [role_4], [role_5]: Additional roles users can react to add (optional).</li>
+        </ul>
+      </ul>
+
+      <h4>/create_reaction_role remove_only</h4>
+
+      <ul>
+        <li><strong>Description:</strong> Create a remove-only reaction role setup where users can only remove roles by reacting to buttons.</li>
+        <li><strong>Required Permissions:</strong> manage_roles</li>
+        <li><strong>Usage:</strong> /create_reaction_role remove_only &lt;message&gt; &lt;role&gt; [role_2] [role_3] [role_4] [role_5]</li>
+        <ul>
+          <li>&lt;message&gt;: The message content to send along with the reaction buttons.</li>
+          <li>&lt;role&gt;: Mention or ID of the role users can react to remove.</li>
+          <li>[role_2], [role_3], [role_4], [role_5]: Additional roles users can react to remove (optional).</li>
+        </ul>
+      </ul>
+
+      <h4>/create_reaction_role single</h4>
+
+      <ul>
+        <li><strong>Description:</strong> Create a single-choice reaction role setup where users can only select one role at a time by reacting to buttons.</li>
+        <li><strong>Required Permissions:</strong> manage_roles</li>
+        <li><strong>Usage:</strong> /create_reaction_role single &lt;message&gt; &lt;role&gt; [role_2] [role_3] [role_4] [role_5]</li>
+        <ul>
+          <li>&lt;message&gt;: The message content to send along with the reaction buttons.</li>
+          <li>&lt;role&gt;: Mention or ID of the role users can select.</li>
+          <li>[role_2], [role_3], [role_4], [role_5]: Additional roles users can select (optional).</li>
+        </ul>
+      </ul>
+
+      <h3>Functionality</h3>
+
+      <p>
+        This module simplifies the process of assigning and managing roles for users in a Discord server by utilizing reaction buttons on messages. Users can easily interact with these buttons to gain or lose specific roles based on the
+        server's configuration.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>

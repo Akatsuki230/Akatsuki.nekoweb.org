@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "MS UI Gothic", nec_apc3, Verdana, sans-serif !important;
-    image-rendering: -moz-crisp-edges !important;
-    image-rendering: -webkit-crisp-edges !important;
-    image-rendering: pixelated !important;
-    image-rendering: crisp-edges !important;
+    font-family: "MS UI Gothic", nec_apc3, Verdana, sans-serif;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 :root {
@@ -122,4 +122,10 @@ button:active {
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+/* code tags */
+code {
+    color: rgb(231, 124, 245);
+    font-family: monospace;
 }

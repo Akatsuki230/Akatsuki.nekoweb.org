@@ -1,0 +1,204 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Leveling Module" description="The Leveling module allows server administrators to implement and manage a leveling system within their Discord server. " />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Leveling Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+
+      <p>The Leveling module allows server administrators to implement and manage a leveling system within their Discord server. This documentation provides an overview of the available commands and how to use them effectively.</p>
+
+      <h3>Overview</h3>
+
+      <p>The Leveling module offers the following features:</p>
+
+      <ul>
+        <li>Automatically track and update user experience points (XP) based on message activity.</li>
+        <li>Configure leveling multipliers and events.</li>
+        <li>Assign roles to users based on their level.</li>
+        <li>Commands for checking user levels and configuring leveling settings.</li>
+      </ul>
+
+      <h3>Commands</h3>
+
+      <h4>/level</h4>
+
+      <p><strong>Description:</strong> Get the level of a user.</p>
+
+      <p><strong>Usage:</strong></p>
+
+      <pre><code>/level user:&lt;user&gt;</code></pre>
+
+      <p><strong>Parameters:</strong></p>
+
+      <ul>
+        <li><code>user</code>: The user to check the level for (optional). If no user is specified, it will check the level of the command issuer.</li>
+      </ul>
+
+      <p><strong>Example:</strong></p>
+
+      <pre><code>/level user:@JohnDoe</code></pre>
+
+      <p>This command retrieves the level of the user @JohnDoe.</p>
+
+      <h4>/leveling list</h4>
+
+      <p><strong>Description:</strong> List the leveling settings.</p>
+
+      <p><strong>Usage:</strong></p>
+
+      <pre><code>/leveling list</code></pre>
+
+      <p><strong>Permissions:</strong> Requires the user to have <code>Manage Guild</code> permissions.</p>
+
+      <p><strong>Example:</strong></p>
+
+      <pre><code>/leveling list</code></pre>
+
+      <p>This command lists the current leveling settings for the server.</p>
+
+      <h4>/leveling multiplier</h4>
+
+      <p><strong>Description:</strong> Set the leveling multiplier.</p>
+
+      <p><strong>Usage:</strong></p>
+
+      <pre><code>/leveling multiplier multiplier:&lt;multiplier&gt;</code></pre>
+
+      <p><strong>Parameters:</strong></p>
+
+      <ul>
+        <li><code>multiplier</code>: The multiplier to set for leveling.</li>
+      </ul>
+
+      <p><strong>Permissions:</strong> Requires the user to have <code>Manage Guild</code> permissions.</p>
+
+      <p><strong>Example:</strong></p>
+
+      <pre><code>/leveling multiplier multiplier:2</code></pre>
+
+      <p>This command sets the leveling multiplier to 2x.</p>
+
+      <h4>/leveling weekend_event</h4>
+
+      <p><strong>Description:</strong> Enable or disable the weekend event.</p>
+
+      <p><strong>Usage:</strong></p>
+
+      <pre><code>/leveling weekend_event enabled:&lt;enabled&gt;</code></pre>
+
+      <p><strong>Parameters:</strong></p>
+
+      <ul>
+        <li><code>enabled</code>: Whether the weekend event is enabled (<code>true</code> or <code>false</code>).</li>
+      </ul>
+
+      <p><strong>Permissions:</strong> Requires the user to have <code>Manage Guild</code> permissions.</p>
+
+      <p><strong>Example:</strong></p>
+
+      <pre><code>/leveling weekend_event enabled:true</code></pre>
+
+      <p>This command enables the weekend event.</p>
+
+      <h4>/leveling weekend_event_multiplier</h4>
+
+      <p><strong>Description:</strong> Set the weekend event multiplier.</p>
+
+      <p><strong>Usage:</strong></p>
+
+      <pre><code>/leveling weekend_event_multiplier weekend_event_multiplier:&lt;multiplier&gt;</code></pre>
+
+      <p><strong>Parameters:</strong></p>
+
+      <ul>
+        <li><code>weekend_event_multiplier</code>: The multiplier to set for the weekend event.</li>
+      </ul>
+
+      <p><strong>Permissions:</strong> Requires the user to have <code>Manage Guild</code> permissions.</p>
+
+      <p><strong>Example:</strong></p>
+
+      <pre><code>/leveling weekend_event_multiplier weekend_event_multiplier:3</code></pre>
+
+      <p>This command sets the weekend event multiplier to 3x.</p>
+
+      <h4>/leveling set_reward</h4>
+
+      <p><strong>Description:</strong> Set a role reward for a specific level.</p>
+
+      <p><strong>Usage:</strong></p>
+
+      <pre><code>/leveling set_reward level:&lt;level&gt; role:&lt;role&gt;</code></pre>
+
+      <p><strong>Parameters:</strong></p>
+
+      <ul>
+        <li><code>level</code>: The level to set the reward for.</li>
+        <li><code>role</code>: The role to assign as a reward.</li>
+      </ul>
+
+      <p><strong>Permissions:</strong> Requires the user to have <code>Manage Guild</code> permissions.</p>
+
+      <p><strong>Example:</strong></p>
+
+      <pre><code>/leveling set_reward level:5 role:@Level5Role</code></pre>
+
+      <p>This command sets the reward for reaching level 5 to the role @Level5Role.</p>
+
+      <h4>/leveling remove_reward</h4>
+
+      <p><strong>Description:</strong> Remove a role reward for a specific level.</p>
+
+      <p><strong>Usage:</strong></p>
+
+      <pre><code>/leveling remove_reward level:&lt;level&gt;</code></pre>
+
+      <p><strong>Parameters:</strong></p>
+
+      <ul>
+        <li><code>level</code>: The level to remove the reward for.</li>
+      </ul>
+
+      <p><strong>Permissions:</strong> Requires the user to have <code>Manage Guild</code> permissions.</p>
+
+      <p><strong>Example:</strong></p>
+
+      <pre><code>/leveling remove_reward level:5</code></pre>
+
+      <p>This command removes the reward for reaching level 5.</p>
+
+      <h3>Automatic Leveling and Role Assignment</h3>
+
+      <ul>
+        <li><strong>XP Gain:</strong> Users gain XP by sending messages in the server.</li>
+        <li><strong>Level Up:</strong> When a user's XP reaches a certain threshold, they level up.</li>
+        <li><strong>Role Assignment:</strong> The bot automatically assigns roles to users based on their level if configured.</li>
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>

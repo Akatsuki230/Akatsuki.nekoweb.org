@@ -1,0 +1,67 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Giveaways Module" description="The Giveaways module allows server administrators to create and manage giveaways directly within their Discord server." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Giveaways Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <h2>Overview</h2>
+      <p>The Giveaways module allows server administrators to create and manage giveaways directly within their Discord server. This documentation provides an overview of the available commands and how to use them effectively.</p>
+      <h2>Features</h2>
+      <ul>
+        <li>Create new giveaways with a specified duration.</li>
+        <li>Automatically manage giveaway participants.</li>
+        <li>Select and announce winners once the giveaway period ends.</li>
+        <li>Track and update giveaway participation based on reactions.</li>
+      </ul>
+      <h2>Commands</h2>
+      <h3>/giveaways new</h3>
+      <p><strong>Description:</strong> Create a new giveaway.</p>
+      <h4>Usage:</h4>
+      <pre><code>/giveaways new item:&lt;item&gt; days:&lt;days&gt; hours:&lt;hours&gt;</code></pre>
+      <h4>Parameters:</h4>
+      <ul>
+        <li><code>item</code>: The item or prize for the giveaway.</li>
+        <li><code>days</code>: The number of days the giveaway will last.</li>
+        <li><code>hours</code>: The number of hours the giveaway will last.</li>
+      </ul>
+      <h4>Example:</h4>
+      <pre><code>/giveaways new item:Gift Card days:2 hours:5</code></pre>
+      <p>Creates a giveaway for a "Gift Card" that lasts for 2 days and 5 hours.</p>
+      <h3>Participation in Giveaways</h3>
+      <p>To participate in a giveaway, users need to react to the giveaway message with the 🎉 emoji. The module will automatically register and manage the participants.</p>
+      <h3>Removing Participation</h3>
+      <p>If a user removes their 🎉 reaction from the giveaway message, they will be automatically removed from the participants list.</p>
+      <h3>Giveaway Management</h3>
+      <p>The module runs a background task every minute to check for ended giveaways. When a giveaway ends, the:</p>
+      <ol>
+        <li>Selects a random winner from the participants.</li>
+        <li>Announces the winner in the giveaway channel.</li>
+      </ol>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,88 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Moderation Module" description="This module provides commands to perform moderation actions such as kicking, banning, timing out, and removing timeouts for users in a Discord server." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Moderation Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>This module provides commands to perform moderation actions such as kicking, banning, timing out, and removing timeouts for users in a Discord server.</p>
+
+      <h3>Commands</h3>
+
+      <h4>/kick</h4>
+      <ul>
+        <li><strong>Description:</strong> Kick a user from the server.</li>
+        <li><strong>Required Permissions:</strong> kick_members</li>
+        <li><strong>Usage:</strong> /kick &lt;user&gt; &lt;reason&gt; [send_dm=True]</li>
+        <ul>
+          <li>&lt;user&gt;: Mention or ID of the user to kick.</li>
+          <li>&lt;reason&gt;: Reason for kicking the user.</li>
+          <li>[send_dm]: Optional boolean to send a DM to the user (default: True).</li>
+        </ul>
+      </ul>
+
+      <h4>/ban</h4>
+      <ul>
+        <li><strong>Description:</strong> Ban a user from the server.</li>
+        <li><strong>Required Permissions:</strong> ban_members</li>
+        <li><strong>Usage:</strong> /ban &lt;user&gt; &lt;reason&gt; [send_dm=True]</li>
+        <ul>
+          <li>&lt;user&gt;: Mention or ID of the user to ban.</li>
+          <li>&lt;reason&gt;: Reason for banning the user.</li>
+          <li>[send_dm]: Optional boolean to send a DM to the user (default: True).</li>
+        </ul>
+      </ul>
+
+      <h4>/timeout</h4>
+      <ul>
+        <li><strong>Description:</strong> Time out a user from the server. If a user has a timeout, this will change the timeout.</li>
+        <li><strong>Required Permissions:</strong> mute_members</li>
+        <li><strong>Usage:</strong> /timeout &lt;user&gt; &lt;reason&gt; &lt;days&gt; &lt;hours&gt; &lt;minutes&gt; [send_dm=True]</li>
+        <ul>
+          <li>&lt;user&gt;: Mention or ID of the user to time out.</li>
+          <li>&lt;reason&gt;: Reason for timing out the user.</li>
+          <li>&lt;days&gt;: Number of days for the timeout.</li>
+          <li>&lt;hours&gt;: Number of hours for the timeout.</li>
+          <li>&lt;minutes&gt;: Number of minutes for the timeout.</li>
+          <li>[send_dm]: Optional boolean to send a DM to the user (default: True).</li>
+        </ul>
+      </ul>
+
+      <h4>/remove_timeout</h4>
+      <ul>
+        <li><strong>Description:</strong> Remove a timeout from a user on the server.</li>
+        <li><strong>Required Permissions:</strong> mute_members</li>
+        <li><strong>Usage:</strong> /remove_timeout &lt;user&gt; &lt;reason&gt; [send_dm=True]</li>
+        <ul>
+          <li>&lt;user&gt;: Mention or ID of the user to remove the timeout from.</li>
+          <li>&lt;reason&gt;: Reason for removing the timeout.</li>
+          <li>[send_dm]: Optional boolean to send a DM to the user (default: True).</li>
+        </ul>
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>

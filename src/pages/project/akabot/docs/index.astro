@@ -1,0 +1,68 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Akabot Documentation" description="The Akabot Discord bot documentation." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>Welcome to the Akabot documentation! Here you can find documentation for every module of the Discord bot.</p>
+      <p>The list of modules and their links to their respective documentations can be found below:</p>
+      <ul>
+        <li>
+            <a href="/project/akabot/docs/antiraid">Anti raid</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/chatrevive">Chat Revive</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/chatstreaks">Chat Streaks</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/chatsummary">Chat Summary</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/leveling">Leveling</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/logging">Logging</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/moderation">Moderation</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/reactionroles">Reaction Roles</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/welcoming">Welcome and Goodbye</a>
+        </li>
+        <li>
+            <a href="/project/akabot/docs/giveaways">Giveaways</a>
+        </li>
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>

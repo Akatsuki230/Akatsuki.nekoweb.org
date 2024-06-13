@@ -1,0 +1,105 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Verification Module" description="This module adds user verification in Discord servers. It prevents bots from accessing your Discord server" />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Verification Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>This module adds user verification in Discord servers. It prevents bots from accessing your Discord server.</p>
+
+      <h3>Commands</h3>
+
+      <h4>/verification set_role</h4>
+
+      <ul>
+        <li><strong>Description:</strong> Set a role that users will receive upon successful verification.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_roles</code></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Usage:</strong>
+          <code>/verification set_role &lt;role&gt;</code>
+          <ul>
+            <li><code>&lt;role&gt;</code>: Mention or ID of the role to be assigned upon verification.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>/verification set_difficulty</h4>
+
+      <ul>
+        <li><strong>Description:</strong> Set the difficulty level for the verification process.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_roles</code></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Usage:</strong>
+          <code>/verification set_difficulty &lt;difficulty&gt;</code>
+          <ul>
+            <li><code>&lt;difficulty&gt;</code>: Choose from "none", "easy math", "medium math", "hard math", "random english word", "reverse text".</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>/verification send_message</h4>
+
+      <ul>
+        <li><strong>Description:</strong> Send the verification message to the current channel.</li>
+        <li>
+          <strong>Required Permissions:</strong>
+          <ul>
+            <li><code>manage_guild</code></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Usage:</strong>
+          <code>/verification send_message [custom_verify_message] [custom_verify_label]</code>
+          <ul>
+            <li><code>[custom_verify_message]</code>: Optional custom verification message to be sent.</li>
+            <li><code>[custom_verify_label]</code>: Optional custom label for the verification button.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Functionality</h3>
+
+      <ul>
+        <li><strong>Role Setting:</strong> Administrators can specify a role to be granted to users upon successful verification.</li>
+        <li>
+          <strong>Difficulty Setting:</strong> Administrators can choose from various verification methods, including simple math problems, English word verification, and text reversal, to set the difficulty level of the verification process.
+        </li>
+        <li><strong>Sending Verification Message:</strong> Administrators can send a verification message to a channel, prompting users to undergo the verification process by clicking a verification button.</li>
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>
