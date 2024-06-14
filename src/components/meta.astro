@@ -4,16 +4,10 @@ interface Props {
   description: string;
 }
 
-let { name, description, tag } = Astro.props;
+let { name, description } = Astro.props;
 name = name.replace(/[aA]katsuki/g, "アカツキ");
 description = description.replace(/[aA]katsuki/g, "アカツキ");
 const author = "アカツキ";
-
-if (tag) {
-  tag = tag + ",";
-} else {
-  tag = "";
-}
 ---
 
 <meta charset="UTF-8" />
