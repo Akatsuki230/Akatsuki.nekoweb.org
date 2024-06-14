@@ -1,0 +1,39 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Scripts from "@components/scripts.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <Meta name="<MOD TITLE>" description="<SHORT MOD DESCRIPTION>"  />
+        <Scripts />
+    <Cursor />
+</head>
+
+    <body>
+        <Header />
+        <main>
+            <h1><!-- Title of mod --></h1>
+            <p>
+                <!-- Short project description -->
+            </p>
+            <p>
+                <!-- Description of the project goes here -->
+            </p>
+            <p>
+                <a href="<insert link to mod>">
+                    <button>Download</button>
+                </a>
+                <a href="/discord">
+                  <button>Join my Discord server to discuss this project</button>
+                </a>
+            </p>
+        </main>
+        <Footer />
+    </body>
+</html>
