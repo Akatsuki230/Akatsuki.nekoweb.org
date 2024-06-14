@@ -1,0 +1,286 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import indexing from "@components/new_index.json";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Search Nekoweb" description="Search the entirety of Nekoweb, including all website's content." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Nekoweb Search</h1>
+      <p>Search all websites, including all content, instantly. The website index was last updated 2024/06/01. I plan to reindex this every month, so the next reindex will be on 2024/07/01.</p>
+      <p id="searchResultStatus"></p>
+      <span>Search</span>
+      <select id="searchWhat">
+        <option value="content" selected>website content for:</option>
+        <option value="titles">website titles for:</option>
+        <option value="link">websites by link:</option>
+        <option value="from">websites containing links:</option>
+        <option value="to">websites that have a link to this link:</option>
+      </select>
+      <input type="text" id="search" />
+      <br>
+      <span>and</span>
+      <select id="searchWhat2">
+        <option value="none" selected>no second filter.</option>
+        <option value="content">website content for:</option>
+        <option value="titles">website titles for:</option>
+        <option value="link">websites by link:</option>
+        <option value="from">websites containing links:</option>
+        <option value="to">websites that have a link to this link:</option>
+      </select>
+      <input type="text" id="search2" />
+      <br>
+      <select id="searchSort">
+        <option value="no">do not sort, will be displayed by when it was indexed</option>
+        <option value="linked">sort by how many times the website was linked</option>
+        <option value="links">sort by how many links this website has</option>
+        <option value="az">sort by titles from a to z</option>
+        <option value="za">sort by titles from z to a</option>
+        <option value="titleLenDesc">sort by titles from longest to shortest</option>
+        <option value="titleLenAsc">sort by titles from shortest to longest</option>
+        <option value="contentLenDesc">sort by content from longest to shortest</option>
+        <option value="contentLenAsc">sort by content from shortest to longest</option>
+      </select>
+
+      <div id="searchResults"></div>
+
+      <h2>How do I opt out?</h2>
+      <p>To opt out of this, it's the same as for Akatsuki Nekosearch. Simply open your robots.txt and add the following:</p>
+      <p>
+        <code>
+          User-agent: AkatsukiNekowebBot<br>
+          Disallow: *
+        </code>
+      </p>
+
+      <h2>Le Button</h2>
+      <img src="/neko/search/button.gif" alt="88x31 button">
+      <br>
+      <br>
+      <a href="/discord">
+        <button>Join my Discord server to discuss this project</button>
+      </a>
+
+      <script is:inline define:vars={{ indexing }}>
+        function shortenString(string, limit) {
+          if (string.length <= limit) {
+            return string;
+          }
+
+          let shortenedString = "";
+          let currentLength = 0;
+          const words = string.split(" ");
+
+          for (let i = 0; i < words.length; i++) {
+            const word = words[i];
+            const wordLength = word.length;
+
+            if (currentLength + wordLength <= limit) {
+              shortenedString += word + " ";
+              currentLength += wordLength + 1; // Add 1 for the space
+            } else {
+              break;
+            }
+          }
+
+          return shortenedString.trim() + "...";
+        }
+
+        /** @type {HTMLInputElement} */
+        let searchInput = document.getElementById("search");
+        /** @type {HTMLSelectElement} */
+        let searchType = document.getElementById("searchWhat");
+        /** @type {HTMLDivElement} */
+        let searchResults = document.getElementById("searchResults");
+        /** @type {HTMLParagraphElement} */
+        let searchResultStatus = document.getElementById("searchResultStatus");
+        /** @type {HTMLSelectElement} */
+        let searchSort = document.getElementById("searchSort");
+        /** @type {HTMLSelectElement} */
+        let searchWhat2 = document.getElementById("searchWhat2");
+        /** @type {HTMLInputElement} */
+        let searchInput2 = document.getElementById("search2");
+
+        function addToSearchResults(item, counter) {
+          if (counter > 10) {
+            return;
+          }
+          let el = document.createElement("div");
+
+          let title = document.createElement("h2");
+          el.appendChild(title);
+
+          let titleLink = document.createElement("a");
+          titleLink.href = item.url;
+          titleLink.innerText = item.title;
+          title.appendChild(titleLink);
+
+          let shortDesc = document.createElement("p");
+          shortDesc.innerText = shortenString(item.body, 250);
+          el.appendChild(shortDesc);
+
+          searchResults.appendChild(el);
+        }
+
+        function search() {
+          searchResults.innerHTML = "";
+
+          let items = [];
+
+          for (const item of indexing) {
+            if (item.title == null) {
+              item.title = "Untitled";
+            }
+            switch (searchType.value) {
+              case "content": {
+                if (item.title.toLowerCase().includes(searchInput.value.toLowerCase()) || item.body.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                  items.push(item);
+                }
+                break;
+              }
+              case "titles": {
+                if (item.title.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                  items.push(item);
+                }
+                break;
+              }
+              case "link": {
+                if (item.url.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                  items.push(item);
+                }
+              }
+              case "from":
+              case "to": {
+                for (let link of item["links_" + searchType.value]) {
+                  if (link.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                    items.push(item);
+                  }
+                }
+              }
+            }
+          }
+
+          let newItems = [];
+          for (const item of items) {
+            switch (searchWhat2.value) {
+              case "content": {
+                if (item.body.toLowerCase().includes(searchInput2.value.toLowerCase())) {
+                  newItems.push(item);
+                }
+                break;
+              }
+              case "titles": {
+                if (item.title.toLowerCase().includes(searchInput2.value.toLowerCase())) {
+                  newItems.push(item);
+                }
+                break;
+              }
+              case "link": {
+                if (item.url.toLowerCase().includes(searchInput2.value.toLowerCase())) {
+                  newItems.push(item);
+                }
+                break;
+              }
+              case "from": {
+                if (item.links_from.includes(searchInput2.value)) {
+                  newItems.push(item);
+                }
+              }
+              case "to": {
+                if (item.links_to.includes(searchInput2.value)) {
+                  newItems.push(item);
+                }
+              }
+              case "none": {
+                newItems.push(item);
+              }
+            }
+          }
+
+          items = newItems;
+
+          switch (searchSort.value) {
+            case "no": {
+              break;
+            }
+            case "linked": {
+              items.sort((a, b) => b.links_from.length - a.links_from.length);
+              break;
+            }
+            case "links": {
+              items.sort((a, b) => b.links_to.length - a.links_to.length);
+              break;
+            }
+            case "az": {
+              items.sort((a, b) => a.title.localeCompare(b.title));
+              break;
+            }
+            case "za": {
+              items.sort((a, b) => b.title.localeCompare(a.title));
+              break;
+            }
+            case "titleLenDesc": {
+              items.sort((a, b) => b.title.length - a.title.length);
+              break;
+            }
+            case "titleLenAsc": {
+              items.sort((a, b) => a.title.length - b.title.length);
+              break;
+            }
+            case "contentLenDesc": {
+              items.sort((a, b) => b.body.length - a.body.length);
+              break;
+            }
+            case "contentLenAsc": {
+              items.sort((a, b) => a.body.length - b.body.length);
+              break;
+            }
+          }
+
+          for (const item of items) {
+            addToSearchResults(item, items.indexOf(item) + 1);
+          }
+
+          if (items.length === 0) {
+            searchResultStatus.textContent = "No results found.";
+          } else if (items.length === 1) {
+            searchResultStatus.textContent = "1 result found.";
+          } else {
+            searchResultStatus.textContent = `${items.length} results found. ${items.length > 10 ? "Results limited to 10 to improve performance." : ""}`;
+          }
+        }
+
+        let timeout = null;
+
+        searchInput.onchange = search;
+        searchInput.oninput = () => {
+          if (timeout != null) {
+            clearTimeout(timeout);
+            timeout = null;
+          }
+
+          timeout = setTimeout(search, 500);
+        };
+        searchType.onchange = search;
+        searchSort.onchange = search;
+        searchWhat2.onchange = search;
+        searchInput2.oninput = search;
+      </script>
+
+    </main>
+    <Footer />
+  </body>
+</html>
