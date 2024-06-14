@@ -2,7 +2,6 @@
 interface Props {
   name: string;
   description: string;
-  tag?: string;
 }
 
 let { name, description, tag } = Astro.props;
@@ -32,8 +31,3 @@ if (tag) {
 <meta property="og:locale:alternate" content="ja_JP" />
 <meta name="twitter:title" content={`${name} | Akatsuki's website`} />
 <meta name="twitter:description" content={description} />
-
-<meta
-  name="keywords"
-  content={`${tag}akatsuki,akatsuki,web development,programming,akatsuki,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming`}
-/>
