@@ -15,16 +15,9 @@ if [[ ! -f "./public/scripts/cursoreffects.js" ]]; then
     ./GetThirdParty.sh
 fi
 
-# Check data
-
-if ! jq empty ./webdata.json 2>/dev/null; then
-    echo "Error: Invalid JSON data"
-    exit 1
-fi
-
 # Start by building
-pnpm install
-pnpm build
+yarn install
+yarn build
 
 rm -rf ./dist2
 
