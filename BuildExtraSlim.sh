@@ -34,7 +34,7 @@ cp -r ./dist ./dist2
 cd ./dist2
 
 # Delete unnecessary files
-find . -type f \( -name "*.webp" -o -name "*.zip" -o -name "*.ico" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.svg" -o -name "*.gif" -o -name "*.txt" -o -name "*.ase" \) -delete
+find . -type f \( -name "*.webp" -o -name "*.zip" -o -name "*.ico" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.svg" -o -name "*.gif" -o -name "*.txt" -o -name "*.ase" -o -name "*.gif" \) -delete
 
 rm -f ./neko/search/index.html
 

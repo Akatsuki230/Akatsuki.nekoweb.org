@@ -27,7 +27,7 @@ cp -r ./dist ./dist2
 cd ./dist2
 
 # Delete unnecessary files
-find . -type f \( -name "*.webp" -o -name "*.zip" -o -name "*.ico" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.svg" -o -name "*.gif" -o -name "*.ase" -o -name "*.txt" \) -delete
+find . -type f \( -name "*.webp" -o -name "*.zip" -o -name "*.ico" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.svg" -o -name "*.gif" -o -name "*.ase" -o -name "*.txt" -o -name "*.gif" \) -delete
 
 # Compress
 zip -r ../dist.zip .
