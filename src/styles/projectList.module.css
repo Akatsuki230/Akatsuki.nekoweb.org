@@ -38,8 +38,8 @@
     margin: 20px 0;
 }
 
-a {
-    color: #fff;
+.project a {
+    color: white;
     text-decoration: none;
 }
 

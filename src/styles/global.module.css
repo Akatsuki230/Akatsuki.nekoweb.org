@@ -50,6 +50,7 @@ nav li {
 }
 
 nav a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
@@ -78,7 +79,6 @@ img {
 
 a {
 	color: #f991df;
-	text-decoration: none;
 }
 
 a:hover {
