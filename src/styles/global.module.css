@@ -82,6 +82,13 @@ img {
     max-width: 100%;
 }
 
+details > summary {
+    color: #f991df;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: bold;
+}
+
 /* Links */
 
 a {
