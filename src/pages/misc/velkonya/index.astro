@@ -1,0 +1,50 @@
+---
+import "@styles/global.module.css";
+import Footer from "@components/footer.astro";
+import Header from "@components/header.astro";
+import Meta from "@components/meta.astro";
+import Tabs from "@components/Tabs.astro";
+import Tab from "@components/Tab.astro";
+import Cursor from "@components/cursor.astro";
+import Scripts from "@components/scripts.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <Meta
+            name="Velkonya | Minecraft"
+            description="Velkonya is a city in Minecraft with lots of things to do inside of."
+        />
+        <Scripts />
+    <Cursor />
+</head>
+    <body>
+        <Header />
+        <main>
+            <h1>Velkonya</h1>
+            <Tabs>
+                <Tab href="/misc/velkonya" selected>Main</Tab>
+                <Tab href="/misc/velkonya/media">Media</Tab>
+                <Tab href="/misc/velkonya/history">History Book</Tab>
+                <Tab href="/misc/velkonya/visits">Visits Board</Tab>
+                <Tab href="/misc/velkonya/join">How to join the server</Tab>
+                <Tab href="/misc/velkonya/getahouse">How to get a house</Tab>
+            </Tabs>
+            <h2>What is Velkonya</h2>
+            <p>Velkonya is a village/city in Minecraft. Currently it features 24 houses, one apartment with another 4 small places to live, totallying to a total of 28 places to live at.</p>
+            <h2>Things in Velkonya</h2>
+            <ul>
+                <li><strong>1 apartment complex</strong> with a total of 4 small places to live at.</li>
+                <li><strong>24 houses</strong> with lightning, windows and signs, ability to rename your own house.</li>
+                <li><strong>2 lookout spots</strong> to be able to see the entire village from one place.</li>
+                <li><strong>Fight arena</strong> made with fist fights and some rules to make it comply with the rules of the server.</li>
+                <li><strong>History Museum</strong> a small history museum to read about the history of Velkonya (also available here)</li>
+                <li><strong>Japanese Board</strong> is well, a Japanese board featuring all base Hiragana and Katakana.</li>
+                <li><strong>TRANS RIGHTS! </strong> the city is full of trans flags, bi flags and more pride flags!</li>
+                <li><strong>Visits Board</strong> with a list of visits. Available read-only on this website.</li>
+            </ul>
+        </main>
+        <Footer />
+    </body>
+</html>

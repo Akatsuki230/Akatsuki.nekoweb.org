@@ -1,0 +1,49 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Chat Revive - Akabot Documentation" description="The Chat Revive module revives your chats when they go inactive." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Chat Revive</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>The Chat Revive commands revives commands if there's no seen activity for a set period of time.</p>
+      <h2>Configuration</h2>
+      <p>To add Chat Revive to a channel, create a Chat Revive role. Then go ahead and use the following command to make the bot ping the role when there's no activity for a period of time:</p>
+      <p><code>/chatrevive set channel: revival_minutes: revival_role:</code></p>
+      <p>The channel is the channel to apply Chat Reviving on.</p>
+      <p>The revival minutes is the amount of minutes from the last message sent to revive the channel.</p>
+      <p>The revival role is the role you have created to revive the channel.</p>
+      <h2>Removal of channels</h2>
+      <p>To stop using Chat Revive to revive a channel, you can disable the Chat Reviving by using the following command:</p>
+      <p><code>/chatrevive remove channel:</code></p>
+      <p>The channel parameter is the channel to remove Chat Reviving on.</p>
+      <h2>Listing of all set up channels</h2>
+      <p>To list the settings on a channel, issue the following command:</p>
+      <p><code>/chatrevive list channel:</code></p>
+      <p>The channel parameter is the channel to list the settings of Chat Reviving on.</p>
+    </main>
+    <Footer />
+  </body>
+</html>

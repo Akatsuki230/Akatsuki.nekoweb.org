@@ -1,0 +1,52 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Chat Summary - Akabot Documentation" description="The chat summary module gives you daily counts of messages in a channel." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Chat Summary</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>The chat summary module counts messages and then sends a message at the end of the day.</p>
+      <h2>Adding a channel</h2>
+      <p>To add a channel into counting and to send the daily message, run the following command:</p>
+      <p><code>/chatsummary add channel:</code></p>
+      <p>The channel parameter is the channel to add to chat summaries to count messages of.</p>
+      <h2>Removing a channel</h2>
+      <p>To remove a channel from counting, run the following command:</p>
+      <p><code>/chatsummary remove channel:</code></p>
+      <p>The channel parameter is the channel to remove from chat summaries.</p>
+      <h2>Setting the date format</h2>
+      <p>To set the date format server wide, use the following command:</p>
+      <p><code>/chatsummary dateformat</code></p>
+      <p>This will allow you to select a date format and set it for the whole Discord server.</p>
+      <h2>Behaviour with edited messages</h2>
+      <p>You can also change the behaviour of what to do with edited messages.</p>
+      <p>If you want to count edited messages as newly sent messages, you can do so by running the following command:</p>
+      <p><code>/chatsummary countedits countedits:</code></p>
+      <p>The countedits parameter is the new value of this setting. Setting it to true will cause the bot to count edits as new messages.</p>
+    </main>
+    <Footer />
+  </body>
+</html>

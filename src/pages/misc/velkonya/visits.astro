@@ -1,0 +1,179 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Visits to Velkonya"
+      description="A list of Visits to Velkonya, a town in Minecraft on VelkySMP."
+    />
+    <Scripts />
+    <Cursor />
+    <style>
+      .signlist {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .sign {
+        width: max-content;
+        border: 1px solid white;
+        margin: 2px;
+        padding: 2px;
+        text-align: center;
+      }
+      
+      .sign p {
+        font-size: 14;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tpurple p {
+        color: #740074;
+      }
+
+      .tblue p {
+        color: #0000ff;
+      }
+
+      .tred p {
+        color: #ff0000;
+      }
+
+      .tlpurple p {
+        color: #a736a7;
+      }
+
+      .tpink p {
+        color: #ff77ff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Visits to Velkonya</h1>
+      <Tabs>
+          <Tab href="/misc/velkonya">Main</Tab>
+          <Tab href="/misc/velkonya/media">Media</Tab>
+          <Tab href="/misc/velkonya/history">History Book</Tab>
+          <Tab href="/misc/velkonya/visits" selected>Visits Board</Tab>
+          <Tab href="/misc/velkonya/join">How to join the server</Tab>
+          <Tab href="/misc/velkonya/getahouse">How to get a house</Tab>
+      </Tabs>
+      <h2>Image</h2>
+      <img src="/misc/velkonya/visits.webp" alt="list">
+      <h2>List</h2>
+      <div class="signlist">
+        <div class="sign">
+          <p>アカツキはここにいた</p>
+          <p>(Akatsuki was here)</p>
+          <p>2024/03/14</p>
+        </div>
+        <div class="sign">
+          <p>wild_van</p>
+          <p>wuz here</p>
+          <p>3/14/24</p>
+        </div>
+        <div class="sign tpurple">
+          <p>Lero has visited this fine estabwishment~</p>
+          <p>Mrow~~</p>
+        </div>
+        <div class="sign tblue">
+          <p>The Lieutenant was here :3</p>
+          <p>mwah mwah :3</p>
+        </div>
+        <div class="sign tred">
+          <p>Mother Anarchy shall establish herself here in Velkonya!</p>
+        </div>
+        <div class="sign">
+          <p>Velky has rubbed his thighs against for the glory of Velkonia</p>
+        </div>
+        <div class="sign">
+          <p>Paradox the goat was here!</p>
+        </div>
+        <div class="sign">
+          <p>Glory to Velkonya</p>
+          <p>Love Crusher &lt;3</p>
+        </div>
+        <div class="sign">
+          <p>Velkonya the city of Velky's thigh believers</p>
+          <p>-HexRacon</p>
+        </div>
+        <div class="sign">
+          <p>Enforger was here :3</p>
+          <p>awawa</p>
+        </div>
+        <div class="sign tlpurple">
+          <p>Gims came here</p>
+          <p>:3</p>
+        </div>
+        <div class="sign">
+          <p>Water is here!</p>
+          <p>Cool place :3</p>
+        </div>
+        <div class="sign tgray">
+          <p>Lil Babo guy was here :3</p>
+          <p>Mraow</p>
+          <p>19.03.2024</p>
+        </div>
+        <div class="sign">
+          <p>Very nice place, kinda forgot to hang up a sign XD</p>
+          <p>-Typera</p>
+        </div>
+        <div class="sign">
+          <p>Very cool City! It look kinda nice</p>
+          <p>&lt;3</p>
+          <p>~~Parzival_Ju~~</p>
+        </div>
+        <div class="sign">
+          <p>The idi0t was here :3</p>
+          <p>cool spot to chill gonna come again</p>
+        </div>
+        <div class="sign">
+          <p>Tapy wuz here!</p>
+          <p>Velky number 1</p>
+          <p>I luv taxes and war crimes!</p>
+        </div>
+        <div class="sign">
+          <p>Pascal1804 was here</p>
+        </div>
+        <div class="sign">
+          <p>OCADAS was here :3</p>
+          <p>-some slovak mf (me)</p>
+        </div>
+        <div class="sign tpink">
+          <p>If you're reading this...</p>
+          <p>You're gay!</p>
+          <p>-Rieri</p>
+        </div>
+        <div class="sign">
+          <p>Dark was here</p>
+          <p>nice place</p>
+          <p>its mine now</p>
+          <p>&lt;:3</p>
+        </div>
+        <div class="sign">
+          <p>sim0tei was here</p>
+        </div>
+        <div class="sign tblue">
+          <p>norm has been here: TEN times</p>
+          <p>selling not salling</p>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,34 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="" description="" />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1></h1>
+      <Tabs>
+        <Tab href="/project/akabot" selected>About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs">Documentation</Tab>
+      </Tabs>
+    </main>
+    <Footer />
+  </body>
+</html>

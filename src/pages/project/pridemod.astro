@@ -1,0 +1,43 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Scripts from "@components/scripts.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Pride Mod" description="Le Pride month mod" />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Pride Month Mod</h1>
+      <p>A mod for celebrating pride month in My Summer Car.</p>
+      <img src="/project/pridemod/Header.webp" alt="Header">
+      <p>
+        <p>After many requests to put the Pride Month Mod on NexusMods, I finally did it.</p>
+        <p>Pride Month Mod for My Summer Car! Current features:</p>
+        <ul>
+          <li><strong>UI color changer</strong>: LGBTQ+, Transgender, Non Binary, Pansexual</li>
+        </ul>
+        <p>More features coming soon! Suggest them using the guestbook and I'll implement them.</p>
+      </p>
+      <p>
+        <a href="https://www.nexusmods.com/mysummercar/mods/5809">
+          <button>Download</button>
+        </a>
+        <a href="/discord">
+          <button>Join my Discord server to discuss this project</button>
+        </a>
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>

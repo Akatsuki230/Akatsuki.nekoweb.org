@@ -12,5 +12,8 @@
   "dependencies": {
     "astro": "^4.6.3",
     "cursor-effects": "^1.0.15"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
   }
 }

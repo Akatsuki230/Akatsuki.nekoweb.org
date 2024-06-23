@@ -1,0 +1,100 @@
+---
+import "@styles/global.module.css";
+import Header from "@components/header.astro";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tabs from "@components/Tabs.astro";
+import Tab from "@components/Tab.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      .warning {
+        background-color: rgb(75, 75, 0);
+        padding: 0.5em;
+        margin: 0.5em;
+        border: 2px solid gray;
+        border-top: 2px solid lightgray;
+        border-left: 2px solid lightgray;
+      }
+    </style>
+    <Meta
+      name="AkaBot"
+      description="A Discord bot by Akatsuki"
+      
+    />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>AkaBot</h1>
+      <Tabs>
+        <Tab href="/project/akabot" selected>About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs">Documentation</Tab>
+      </Tabs>
+      <p>A Discord bot by Akatsuki.</p>
+
+      <div>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1172922944033411243&permissions=2048&scope=bot">
+          <button>Invite</button>
+        </a>
+        <a href="/discord">
+          <button>Join my Discord server to discuss this project</button>
+        </a>
+      </div>
+
+      <p>The Akatsuki's Discord server contains a channel for Akabot discussions.</p>
+
+      <div class="warning">
+        <p><strong>New update v3 out!</strong> <a href="/project/akabot/changelog">See changelog for more details!</a></p>
+      </div>
+
+      <p>The support Discord has active updates about the development of the bot, a chatting community and even you can be part of the development by suggesting new features!</p>
+      <p>This Discord bot, crafted with care by a dedicated individual, provides numerous features to enrich your server experience. Below is a simple explanation of what this bot offers:</p>
+      <ul>
+        <li>
+          <strong>Anti Raid:</strong> Detects big join waves and kicks members accordingly.
+        </li>
+        <li>
+          <strong>Chat Revive:</strong> Revives chat if it has been dead for a while.
+        </li>
+        <li>
+          <strong>Chat Streaks:</strong> Encourages activity by counting consecutively sent messages.
+        </li>
+        <li>
+          <strong>Chat Summary:</strong> Every UTC midnight it summarizes the amount of messages sent in chats.
+        </li>
+        <li>
+          <strong>Leveling:</strong> Counts XP from messages, calculate levels and give rewards for levels.
+        </li>
+        <li>
+          <strong>Logging:</strong> Logs different events.
+        </li>
+        <li>
+          <strong>Moderation:</strong> Commands for kicking, banning and muting people, with DM’s.
+        </li>
+        <li>
+          <strong>Reaction Roles:</strong> Buttons for creating reaction roles, with different behavior settings.
+        </li>
+        <li>
+          <strong>Welcome and Goodbye:</strong> Say welcome and say goodbye to members who join or leave.
+        </li>
+        <li>
+          <strong>Giveaways:</strong> Host simple giveaways on your Discord server, with any ending date and custom reward.
+        </li>
+      </ul>
+      <p>If you think that any features are missing from the bot, you can suggest them straight from the bot using /feedback suggest. They will be added if they're good.</p>
+    </main>
+    <Footer />
+  </body>
+</html>

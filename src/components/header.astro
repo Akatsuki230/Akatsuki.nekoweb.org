@@ -1,24 +1,135 @@
----
-import searchStyles from '@styles/search.module.css';
----
-
 <header>
-  <div
-    style="height: 150px; background-image: url(/misc/menherasuma/1.webp); background-position: center; background-size: cover;"
-  >
-    <div style="height: 150px; background-image: linear-gradient(to bottom, rgb(44, 44, 44), transparent 40%, rgb(44, 44, 44) 100%);">
-      <h2 style="font-size: 2em; position: relative; left: 25px; top: 25px;">Akatsuki's website!</h2>
-      <p style="position: relative; left: 25px; top: 20px;">Welcome to Akatsuki's website!</p>
+
+  <style>
+    #headerImage {
+      height: 150px;
+      background-image: url(/misc/menherasuma/1.webp);
+      background-position: center;
+      background-size: cover;
+    }
+
+    #headerImage > div {
+      height: 150px;
+      background-image: linear-gradient(to bottom, rgb(44, 44, 44), transparent 40%, rgb(44, 44, 44) 100%);
+    }
+
+    #headerImage h2 {
+      font-size: 2em;
+      position: relative;
+      left: 25px;
+      top: 25px;
+      text-shadow: 2px 2px 2px #000;
+    }
+
+    #headerImage p {
+      position: relative;
+      left: 25px;
+      top: 20px;
+      text-shadow: 2px 2px 2px #000;
+    }
+
+    .prideflags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .prideflag {
+      height: 15px;
+      width: 100vw;
+    }
+  </style>
+  <div class="prideflags">
+    <div class="prideflag" style="background-color: red;"></div>
+    <div class="prideflag" style="background-color: orange;"></div>
+    <div class="prideflag" style="background-color: yellow;"></div>
+    <div class="prideflag" style="background-color: green;"></div>
+    <div class="prideflag" style="background-color: blue;"></div>
+    <div class="prideflag" style="background-color: purple;"></div>
+  </div>
+  <div class="prideflags">
+    <div class="prideflag" style="background-color: cyan;"></div>
+    <div class="prideflag" style="background-color: pink;"></div>
+    <div class="prideflag" style="background-color: white; display: flex; justify-content: center;">
+      <span style="color: black; font-size: 10px;">HAPPY PRIDE MONTH!</span>
+    </div>
+    <div class="prideflag" style="background-color: pink;"></div>
+    <div class="prideflag" style="background-color: cyan;"></div>
+  </div>
+  <div class="prideflags">
+    <div class="prideflag" style="background-color: #FF2890;"></div>
+    <div class="prideflag" style="background-color: #FFD908;"></div>
+    <div class="prideflag" style="background-color: #28B3FF;"></div>
+  </div>
+  <div id="headerImage">
+    <div>
+      <h2>Akatsuki's website!</h2>
+      <p>Welcome to Akatsuki's website!</p>
     </div>
   </div>
+  <script is:inline>
+    const imageLinks = [
+      '/project/asphaltroads/1.webp',
+      '/project/astolfoforge/armor.webp',
+      '/project/astolfoforge/astolfoflower.webp',
+      '/project/astolfoforge/biome.webp',
+      '/project/astolfoforge/casual.webp',
+      '/project/astolfoforge/crowd.webp',
+      '/project/astolfoforge/schoolgirl.webp',
+      '/project/astolforesourcepack/ending.webp',
+      '/project/astolforesourcepack/loading.webp',
+      '/project/astolforesourcepack/menu.webp',
+      '/project/astolfos/desktop.webp',
+      '/project/astolfos/neofetch.webp',
+      '/project/astolfos/settings.webp',
+      '/project/highwaycarbreakdowns/1.webp',
+      '/project/highwaycarbreakdowns/2.webp',
+      '/project/highwaycarbreakdowns/3.webp',
+      '/project/highwaycarbreakdowns/4.webp',
+      '/project/highwaycarbreakdowns/5.webp',
+      '/project/msclgbtprideflags/1.webp',
+      '/project/msctweaks/1.webp',
+      '/project/oldcarsounds/1.webp',
+      '/project/oldferndale/1.webp',
+      '/project/oldhayosiko/1.webp',
+      '/project/oldkekmet/1.webp',
+      '/project/oldkekmet/2.webp',
+      '/project/oldkekmet/3.webp',
+      '/project/oldtrucksounds/1.webp',
+      '/project/regplatechanger/1.webp',
+      '/misc/velkonya/0.webp',
+      '/misc/velkonya/1.webp',
+      '/misc/velkonya/2.webp',
+      '/misc/velkonya/3.webp',
+      '/misc/velkonya/4.webp',
+      '/misc/velkonya/5.webp',
+      '/misc/velkonya/6.webp',
+      '/misc/velkonya/7.webp',
+      '/misc/velkonya/8.webp',
+      '/misc/velkonya/9.webp',
+      '/project/waterbills/header.webp',
+      '/project/oldhighwaycars/1.webp',
+      '/project/oldhighwaycars/2.webp',
+      '/project/oldhighwaycars/3.webp',
+      '/project/pridemod/1.webp',
+      '/project/pridemod/Header.webp'
+    ];
+    const imageLink = imageLinks[Math.floor(Math.random() * imageLinks.length)];
+    $("#headerImage").css("background-image", `url(${imageLink})`);
+  </script>
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/search"><span class={searchStyles.new}>NEW!</span> Search Nekoweb</a></li>
+      <li><a href="/guestbook">NEW! Guestbook</a></li>
       <li><a href="/projects">Projects</a></li>
       <li><a href="/socials">Socials</a></li>
       <li><a href="/misc">Miscellaneous</a></li>
       <li><a href="/blog">Blog</a></li>
     </ul>
   </nav>
+  <div style="background-image: linear-gradient(to bottom, rgb(136, 0, 0) 20%, rgb(78, 0, 0) 50%, rgb(150, 1, 1) 100%); padding: 4px; border: 1px solid red;">
+    <a href="https://akatsuki.nekoweb.org/project/akabot">
+      <p><strong>My own Discord bot, Akabot is now verified!</strong> It now has a symbolic checkmark next to it, showing it's a legitimate Discord bot.</p>
+    </a>
+  </div>
 </header>

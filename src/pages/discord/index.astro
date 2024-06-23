@@ -10,7 +10,11 @@ import Cursor from "@components/cursor.astro";
 <!doctype html>
 <html lang="en">
   <head>
-    <Meta name="Discord Server" description="Akatsuki's Discord Server" tag="Akatsuki, Discord Server, My Summer Car mods, community, mod support, chat, Q&A, video announcements, project updates, development involvement, socials, copyright: アカツキ, email: akatsuki2555@waifu.club" />
+    <Meta
+      name="Discord Server"
+      description="Akatsuki's Discord Server"
+      
+    />
     <style>
       #discordrules {
         display: none;
@@ -65,76 +69,37 @@ import Cursor from "@components/cursor.astro";
     <main>
       <h1>Akatsuki's Discord Server</h1>
       <p>Here you can join the Discord server that is owned by Akatsuki.</p>
-      <p>
-        Here you can get help with any of her mods, chat with the community or
-        ask her questions.
-      </p>
-      <p>
-        You will get video announcements, new project announcements and ability
-        to get involved in developing of some projects.
-      </p>
+      <p>Here you can get help with any of her mods, chat with the community or ask her questions.</p>
+      <p>You will get video announcements, new project announcements and ability to get involved in developing of some projects.</p>
       <p>
         <button onclick="showRules()">Join</button>
       </p>
       <h2>Announcements</h2>
       <p>We have an announcements channel which is kinda cool.</p>
-      <img src="/discord/announcements.webp" alt="Announcements channel showcase">
+      <img src="/discord/announcements.webp" alt="Announcements channel showcase" />
 
       <h2>Friendly and safe community</h2>
-      <p>
-        With our strict rules, you can expect to not be uncomfortable chatting in this Discord server.
-      </p>
-      <p>
-        We have rules against everything bad. Including, but not limited to:
-      </p>
-      <ul>
-        <li>Spam</li>
-        <li>Excessive self promotion</li>
-        <li>Languages other than English</li>
-        <li>Advertising</li>
-        <li>Sharing private information</li>
-        <li>Malware</li>
-        <li>Phishing</li>
-        <li>Malicious links</li>
-        <li>Old My Summer Car builds</li>
-        <li>Spoilers of games</li>
-        <li>NSFW</li>
-        <li>Lewd content</li>
-        <li>
-          <span>Bad jokes about:</span>
-          <ul>
-            <li>Nazism</li>
-            <li>Fascism</li>
-            <li>9/11</li>
-            <li>Homeless people</li>
-            <li>Offensive jokes</li>
-            <li>Towards any vulnerable group</li>
-          </ul>
-        </li>
-        <li>How DM's are handled</li>
-        
-        <h2>All of my projects, in one place</h2>
-        <p>On this Discord server, you can find all of my projects' discussions in one place.</p>
-        <p>From LGBTQ pride flags to My Summer Car tweaks, everything is there.</p>
-        <img src="/discord/ProjectList.webp" alt="Project list">
+      <p>With our rules, you can expect to not be uncomfortable chatting in this Discord server.</p>
+      <p>You can read the full list of rules by clicking the join button. A popup will show allowing you to read the rules.</p>
+      <p>We have strict rules to protect our members from getting attacked or from getting uncomfortable.</p>
+      
+      <h2>All of my projects, in one place</h2>
+      <p>On this Discord server, you can find all of my projects' discussions in one place.</p>
+      <p>From LGBTQ pride flags to My Summer Car tweaks, everything is there.</p>
+      <p>There's a button on every project page for joining the Discord server.</p>
+      <img src="/discord/ProjectList.webp" alt="Project list" />
 
-        <h2>LGBTQ+ friendly :3</h2>
-        <p>This server is LGBTQ+ friendly. We have a safe and friendly community.</p>
-        <p>Any jokes against you all LGBTQ+ members will be removed and their respective authors will be punished accordingly.</p>
-        <p>We believe that LGBTQ+ members are vulnerable and that they should be treated with respect.</p>
-        <p>Everyone else is also treated with respect as well.</p>
-      </ul>
+      <h2>LGBTQ+ friendly :3</h2>
+      <p>This server is LGBTQ+ friendly. We have a safe and friendly community.</p>
+      <p>Any jokes against you all LGBTQ+ members will be removed and their respective authors will be punished accordingly.</p>
+      <p>We believe that LGBTQ+ members are vulnerable and that they should be treated with respect.</p>
+      <p>Everyone else is also treated with respect as well.</p>
     </main>
     <Footer />
 
     <div id="discordrules">
       <h2>Before joining please acknowledge these rules</h2>
-      <iframe
-        src="/discord/rules"
-        title="Discord Rules"
-        width="500"
-        height="400"
-        sandbox=""></iframe>
+      <iframe src="/discord/rules" title="Discord Rules" width="500" height="400" sandbox=""></iframe>
       <button id="agree" disabled onclick="agreeToRules()">I agree (10)</button>
       <button id="disagree" onclick="hideRules()">I disagree</button>
     </div>

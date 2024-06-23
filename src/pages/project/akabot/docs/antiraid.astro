@@ -1,0 +1,40 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="AntiRaid - Akabot Documentation" description="The Antiraid module in Akabot allows you to prevent raids by preventing many actions from one user at once." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: The Antiraid Module</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>The Antiraid module prevents way too many joins in a short period of time.</p>
+      <h2>Configuration</h2>
+      <p>To configure the module, there's only one command that sets how many users can join per a set period of time.</p>
+      <p><code>/antiraid join_threshold people: per:</code></p>
+      <p>When this threshold is met, the bot will start kicking members and will DM kicked members that they have been kicked due to suspected raiding.</p>
+      <p>The members can rejoin at any time, if they aren't part of a raid.</p>
+    </main>
+    <Footer />
+  </body>
+</html>

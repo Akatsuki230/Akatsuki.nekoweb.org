@@ -1,0 +1,51 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Chat Streaks - Akabot Documentation" description="The Chat Streaks module counts how many consencutive days you have sent a message in a channel." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Akabot Documentation: Chat Streaks</h1>
+      <Tabs>
+        <Tab href="/project/akabot">About</Tab>
+        <Tab href="/project/akabot/privacy">Privacy Policy</Tab>
+        <Tab href="/project/akabot/tos">Terms of Service</Tab>
+        <Tab href="/project/akabot/changelog">Changelog</Tab>
+        <Tab href="/project/akabot/docs" selected>Documentation</Tab>
+      </Tabs>
+      <p>The Chat Streaks module counts how many days you've sent a message consencutively in a Discord server.</p>
+      <h2>Configuration</h2>
+      <p>If you want to disable the alerts from the bot in your Discord server, issue the following command</p>
+      <p><code>/streaks alerts value:</code></p>
+      <p>The value parameter is your desired setting.</p>
+      <h2>Resetting a member's chat streak</h2>
+      <p>If you want to reset a member's chat streak, you can do so by running:</p>
+      <p><code>/streaks reset user:</code></p>
+      <p>The user parameter is the user to reset the chat streak for.</p>
+      <h2>Getting someone else's chat streak</h2>
+      <p>To get someone else's chat streak (as an admin of a Discord server), run the following command:</p>
+      <p><code>/streaks streak user:</code></p>
+      <p>The user parameter is the user to get the chat streak of.</p>
+      <h2>Getting your own chat streak</h2>
+      <p>To get your own chat streak, run the following command:</p>
+      <p><code>/streak</code></p>
+      <p>This will get your own chat streak.</p>
+    </main>
+    <Footer />
+  </body>
+</html>

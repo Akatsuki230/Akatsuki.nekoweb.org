@@ -1,0 +1,45 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="History of Velkonya"
+      description="Explore the history of Velkonya, a town inside of a Minecraft server."
+    />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>History of Velkonya</h1>
+      <Tabs>
+          <Tab href="/misc/velkonya">Main</Tab>
+          <Tab href="/misc/velkonya/media">Media</Tab>
+          <Tab href="/misc/velkonya/history" selected>History Book</Tab>
+          <Tab href="/misc/velkonya/visits">Visits Board</Tab>
+          <Tab href="/misc/velkonya/join">How to join the server</Tab>
+          <Tab href="/misc/velkonya/getahouse">How to get a house</Tab>
+      </Tabs>
+      <p>Velkonya was founded by Akatsuki. The original idea was brought up by Velky during his livestream that someone could build Velkonya on the server. So I got to work.</p>
+      <p>The name was originally Velkonia, but I decided to change it to Velkonya because of the “nya” at the end of the name.</p>
+      <p>The city started as a single arch with a sign saying “Welcome to Velkonya”, but it slowly expanded. It expanded to 4 buildings in the first day alone.</p>
+      <p>The city was expanding as time progressed. It got a theater, Velky's mansion, visits board and a Japanese board as of now. </p>
+      <p>On 2023/03/13, Velkonya got its first inhabitant. His name was Wild_Van. This inhabitant didn't last for long is they would get banned for trolling.</p>
+      <p>On 2023/03/15, two people by the name of Voidals and Viper would lavacast the entire city with lava out of boredom. They apologized and told me that it wasn't targeted on me. Velkonya was restored to former glory by xRieri.</p>
+      <p>Nothing really happened from this point. The owner of the town, Akatsuki, wasn't online for a long time.</p>
+    </main>
+    <Footer />
+  </body>
+</html>

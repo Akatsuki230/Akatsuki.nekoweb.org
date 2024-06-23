@@ -1,0 +1,44 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="Join Velkonya" description="Here you can VelkySMP, the server where the Minecraft town Velkonya is." />
+    <Scripts />
+    <Cursor />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Join Velkonya</h1>
+      <Tabs>
+        <Tab href="/misc/velkonya">Main</Tab>
+        <Tab href="/misc/velkonya/media">Media</Tab>
+        <Tab href="/misc/velkonya/history">History Book</Tab>
+        <Tab href="/misc/velkonya/visits">Visits Board</Tab>
+        <Tab href="/misc/velkonya/join" selected>How to join the server</Tab>
+        <Tab href="/misc/velkonya/getahouse">How to get a house</Tab>
+      </Tabs>
+
+      <h2>Joining VelkySMP and Velkonya</h2>
+      <p>To join Velkonya, join Velky's Discord server below:</p>
+      <a href="https://discord.gg/velky">
+        <button>Join NOW!</button>
+      </a>
+      <p>After joining the Discord server, navigate to the Minecraft channel and check pinned messages. The IP is there.</p>
+      <p>After joining the Minecraft server and reading the rules, right after joining, turn around 180 degrees and keep walking forward.</p>
+      <p>You will hit Velkonya, it's right behind the hill.</p>
+    </main>
+    <Footer />
+  </body>
+</html>

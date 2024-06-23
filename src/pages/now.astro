@@ -1,0 +1,57 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta
+      name="Now Page"
+      description="What is Akatsuki doing right now?"
+    />
+    <Scripts />
+    <Cursor />
+    <style>
+        .now {
+            border: 2px solid black;
+        }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>The Now page</h1>
+
+      <div class="now">
+        <p id="nowLastUpdate"></p>
+        <p id="nowText">Loading...</p>
+      </div>
+
+      <h2>What is it?</h2>
+      <p>A now page is used to say what the specified user, in this case Akatsuki, is doing right now.</p>
+      <p>You can read more about it on <a href="https://nownownow.com/about">nownownow.com</a>.</p>
+    </main>
+
+    <script is:inline>
+        $.get("/dyn/now.json", function(data) {
+            const date = new Date(data.date);
+            let formattedHours = date.getUTCHours().toString()
+            if (formattedHours.length == 1) formattedHours = "0" + formattedHours;
+            let formattedMinutes = date.getUTCMinutes().toString()
+            if (formattedMinutes.length == 1) formattedMinutes = "0" + formattedMinutes;
+            let formattedSeconds = date.getUTCSeconds().toString()
+            if (formattedSeconds.length == 1) formattedSeconds = "0" + formattedSeconds;
+            const formattedDate = `${date.getUTCFullYear()}/${date.getUTCMonth()}/${date.getUTCDay()} ${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+            $("#nowLastUpdate").text(formattedDate);
+            $("#nowText").text(data.text);
+        })
+    </script>
+    <Footer />
+  </body>
+</html>

@@ -1,28 +1,21 @@
 ---
 interface Props {
-    name: string;
-    description: string;
-    tag?: string;
+  name: string;
+  description: string;
 }
 
-let { name, description, tag } = Astro.props;
+let { name, description } = Astro.props;
 name = name.replace(/[aA]katsuki/g, "アカツキ");
 description = description.replace(/[aA]katsuki/g, "アカツキ");
 const author = "アカツキ";
-
-if (tag) {
-    tag = tag + ",";
-} else {
-    tag = "";
-}
 ---
 
+<meta charset="UTF-8" />
 <title>{name} | Akatsuki's website</title>
 <meta name="description" content={description} />
 <meta name="author" content={author} />
-<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta http-equiv="content-language" content="en" />
 <meta property="og:title" content={`${name} | Akatsuki's website`} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
@@ -32,8 +25,3 @@ if (tag) {
 <meta property="og:locale:alternate" content="ja_JP" />
 <meta name="twitter:title" content={`${name} | Akatsuki's website`} />
 <meta name="twitter:description" content={description} />
-
-<meta
-    name="keywords"
-    content={`${tag}akatsuki,akatsuki,web development,programming,akatsuki,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming,portfolio,portfolio site,web development,portfolio,portfolio site,web development portfolio,programming portfolio,web development,programming`}
-/>

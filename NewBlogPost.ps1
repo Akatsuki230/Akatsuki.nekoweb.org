@@ -24,7 +24,7 @@ $Title = ($Title -creplace '(?<=[a-z0-9])([A-Z])','-$1').Trim('-')
 $Title = $Title.ToLower()
 
 # Construct file path
-$FolderPath = "./src/pages/blog/$Year/$Month"
+$FolderPath = ".\src\pages\blog\$Year\$Month"
 $FileName = "$Day-$Title.astro"
 $FullFilePath = Join-Path -Path $FolderPath -ChildPath $FileName
 

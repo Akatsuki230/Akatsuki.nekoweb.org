@@ -1,0 +1,63 @@
+---
+import Header from "@components/header.astro";
+import "@styles/global.module.css";
+import Scripts from "@components/scripts.astro";
+import Footer from "@components/footer.astro";
+import Meta from "@components/meta.astro";
+import Cursor from "@components/cursor.astro";
+import Tab from "@components/Tab.astro";
+import Tabs from "@components/Tabs.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta name="How to Get a House" description="How to get a house in Velkonya, a town in Minecraft on VelkySMP." />
+    <Scripts />
+    <Cursor />
+    
+    <style>
+        li {
+            margin-left: 1.2em;
+        }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>How to get a house</h1>
+      <Tabs>
+        <Tab href="/misc/velkonya">Main</Tab>
+        <Tab href="/misc/velkonya/media">Media</Tab>
+        <Tab href="/misc/velkonya/history">History Book</Tab>
+        <Tab href="/misc/velkonya/visits">Visits Board</Tab>
+        <Tab href="/misc/velkonya/join">How to join the server</Tab>
+        <Tab href="/misc/velkonya/getahouse" selected>How to get a house</Tab>
+      </Tabs>
+      <h2>Getting a house</h2>
+      <p>To get a house in Velkonya, wait for Akatsuki to come online, or ping her in the Minecraft channel on Velky's Discord server.</p>
+      <p>She will come online and give you a house for free.</p>
+      
+      <h2>Rules of housing in Velkonya</h2>
+
+      <h3>What you own</h3>
+      <p>You own the entire house area, from Y=256 to Y=0.</p>
+
+      <h3>Rules of building</h3>
+      <p>Your building must not annoy anyone else in the village. It can expand beyond the house limits, but it must not annoy anyone else.</p>
+
+      <h3>Rules of owning a house</h3>
+      <ol>
+        <li>You must not have your house taken before.</li>
+        <li>You can only own one house at a time.</li>
+        <li>You must not use alts to get more houses.</li>
+      </ol>
+      <br>
+
+      <h3>Recommendations after getting a house</h3>
+      <p>You should rename your house after getting it. You can use anything for it, but please make sure to not type bad things into your house name. For the house name, you can type something like: &lbrace;name&rbrace;'s house</p>
+    </main>
+    <Footer />
+  </body>
+</html>
