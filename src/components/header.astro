@@ -1,3 +1,7 @@
+---
+import AnnouncementHeader from "./AnnouncementHeader.astro";
+---
+
 <header>
 
   <style>
@@ -127,9 +131,5 @@
       <li><a href="/blog">Blog</a></li>
     </ul>
   </nav>
-  <div style="background-image: linear-gradient(to bottom, rgb(136, 0, 0) 20%, rgb(78, 0, 0) 50%, rgb(150, 1, 1) 100%); padding: 4px; border: 1px solid red;">
-    <a href="https://akatsuki.nekoweb.org/project/akabot">
-      <p><strong>My own Discord bot, Akabot is now verified!</strong> It now has a symbolic checkmark next to it, showing it's a legitimate Discord bot.</p>
-    </a>
-  </div>
+  <AnnouncementHeader />
 </header>
