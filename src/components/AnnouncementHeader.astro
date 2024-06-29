@@ -1,0 +1,45 @@
+<div id="announcementheader_main" style="display:none; background-image: linear-gradient(to bottom, rgb(136, 0, 0) 20%, rgb(78, 0, 0) 50%, rgb(150, 1, 1) 100%); padding: 4px; border: 1px solid red;">
+    <p>
+        <span id="announcementheader_prev">&lt;</span>
+        <span id="announcementheader_curr">1 of 2</span>
+        <span id="announcementheader_next">&gt;</span>
+    </p>
+    <div id="announcementheader_content">
+
+    </div>
+</div>
+
+<script is:inline>
+    const announcements = [
+        "<p><a href='https://ko-fi.com/akatsuki2555'><strong>Support me on Ko-fi!</strong>  I'm now on Ko-fi, a platform where you can support me by buying me a coffee!</a></p>",
+        "<p><a href='https://akatsuki.nekoweb.org/project/akabot'><strong>My own Discord bot, Akabot is now verified!</strong>  It now has a symbolic checkmark next to it, showing it's a legitimate Discord bot.</a></p>"
+    ]
+
+    function updateAnnouncement(index) {
+        $("#announcementheader_content").html(announcements[index]);
+    }
+
+    let currentAnnouncement = 0;
+
+    updateAnnouncement(currentAnnouncement);
+
+    $("#announcementheader_prev").click(() => {
+        currentAnnouncement--;
+        if (currentAnnouncement < 0) {
+            currentAnnouncement = announcements.length - 1;
+        }
+        updateAnnouncement(currentAnnouncement);
+        $("#announcementheader_curr").html(`${currentAnnouncement + 1} of ${announcements.length}`);
+    });
+
+    $("#announcementheader_next").click(() => {
+        currentAnnouncement++;
+        if (currentAnnouncement >= announcements.length) {
+            currentAnnouncement = 0;
+        }
+        updateAnnouncement(currentAnnouncement);
+        $("#announcementheader_curr").html(`${currentAnnouncement + 1} of ${announcements.length}`);
+    });
+
+    $("#announcementheader_main").css("display", "block");
+</script>

@@ -10,10 +10,7 @@ import Cursor from "@components/cursor.astro";
 <!doctype html>
 <html lang="en">
   <head>
-    <Meta
-      name="Akatsuki's Guestbook"
-      description="Akatsuki's guestbook: Sign your visit to this website!"
-    />
+    <Meta name="Akatsuki's Guestbook" description="Akatsuki's guestbook: Sign your visit to this website!" />
     <Scripts />
     <Cursor />
   </head>
@@ -22,8 +19,22 @@ import Cursor from "@components/cursor.astro";
     <Header />
     <main>
       <h1>Akatsuki's Guestbook</h1>
-      <p>Below you can sign your visit to the guestbook.</p>
-      <iframe src="https://akatsuki2555.rf.gd/Guestbook/Guestbook.php" frameborder="0" width="800" height="1000"></iframe>
+      <h2>Rules</h2>
+      <ol>
+        <li><strong>YOUR MESSAGE WILL NEED TO BE APPROVED BY A MODERATOR MANUALLY.</strong></li>
+        <li>No harassement of any kind. Treat everyone with kindness and avoid arguments, drama, or flaming. Do not make offensive, derogatory, or similar memes towards anyone, including fictional figures.</li>
+        <li>Do NOT post any NSFW/LEWD content under ANY circumstance.</li>
+        <li>No talking about tragic historical events in a joking manner, only constructive discussion and understanding is allowed. (i.e. don't joke about 9/11, the holocaust etc.)</li>
+        <li>No self promotion. Sending your own content that's related to the chat is allowed, although this rule is enforced strictly and might not always be allowed.</li>
+        <li>Jokes about NSFW/LEWD content, terrorist organizations, Nazism, fascism, 9/11, homeless, offensive or towards any group that's vulnerable are not treated as jokes on this guestbook.</li>
+      </ol>
+      <br>
+      <p>If you agree to the above rules, you can send a message on the guestbook.</p>
+      <p>
+        <a href="http://akatsuki2555.rf.gd/Guestbook/Guestbook.php">
+          <button>Enter Guestbook</button>
+        </a>
+      </p>
     </main>
     <Footer />
   </body>

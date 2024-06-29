@@ -23,6 +23,8 @@ ul {
 li {
     color: #eee;
     margin-left: 1.2em;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 /* Header */
@@ -66,13 +68,25 @@ h1 {
     background: linear-gradient(to bottom, #2c2c2c 0%, #222222 100%);
 }
 
+h2, h3, h4, h5, h6 {
+    margin: 0 4px;
+}
+
 p {
     color: #eee;
+    margin: 0 6px;
     margin-bottom: 20px;
 }
 
 img {
     max-width: 100%;
+}
+
+details > summary {
+    color: #f991df;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: bold;
 }
 
 /* Links */
